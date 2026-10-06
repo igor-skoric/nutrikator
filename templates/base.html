@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ seo.title }}{% endblock %}</title>
+  {% if seo.description %}<meta name="description" content="{{ seo.description }}">{% endif %}
+  {% if seo.keywords %}<meta name="keywords" content="{{ seo.keywords }}">{% endif %}
+  <meta name="robots" content="{{ seo.robots|default:'index, follow' }}">
+  <meta name="author" content="Nutrikator">
+  <meta name="geo.region" content="RS">
+  <meta name="geo.placename" content="Beograd">
+  {% if seo.canonical %}<link rel="canonical" href="{{ seo.canonical }}">{% endif %}
+  <meta name="theme-color" content="#FC634B">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nutrikator">
+  <meta property="og:title" content="{{ seo.title }}">
+  <meta property="og:description" content="{{ seo.description }}">
+  {% if seo.canonical %}<meta property="og:url" content="{{ seo.canonical }}">{% endif %}
+  {% if seo.og_image %}
+  <meta property="og:image" content="{{ seo.og_image }}">
+  <meta property="og:image:alt" content="Nutrikator — nutritivne deklaracije">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ seo.title }}">
+  <meta name="twitter:description" content="{{ seo.description }}">
+  <meta name="twitter:image" content="{{ seo.og_image }}">
+  {% endif %}
+  {% if seo.json_ld %}<script type="application/ld+json">{{ seo.json_ld|safe }}</script>{% endif %}
+  <link rel="icon" href="{% static 'img/logo-mark.png' %}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=vs-compare-4">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Preskoči na sadržaj</a>
+  {% block content %}{% endblock %}
+  {% include "partials/site_footer.html" %}
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

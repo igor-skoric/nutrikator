@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-usluge{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    {% with h=home_content %}
+
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Usluge</p>
+        <h1 class="section-title">Šta radimo i za koga.</h1>
+        <p class="section-lead">Nutrikator priprema nutritivne proračune i deklaracije na osnovu recepture i podataka o proizvodu — online, bez slanja fizičkog uzorka.</p>
+      </div>
+    </section>
+
+    <section class="us-core">
+      <div class="container">
+        <div class="us-core-grid">
+          <article class="us-core-card">
+            <span class="us-core-num">01</span>
+            <h2>Nutritivni proračun</h2>
+            <p>Izračunavanje energetske i nutritivne vrednosti na osnovu recepture, sastojaka i procesa.</p>
+          </article>
+          <article class="us-core-card is-accent">
+            <span class="us-core-num">02</span>
+            <h2>Deklaracija</h2>
+            <p>Priprema nutritivne deklaracije i obaveznih elemenata usklađenih sa propisima.</p>
+          </article>
+          <article class="us-core-card">
+            <span class="us-core-num">03</span>
+            <h2>Savetovanje</h2>
+            <p>Stručna podrška oko podataka, izmene recepture i zahteva za deklarisanje.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="us-audience">
+      <div class="container">
+        <p class="section-kicker">Za koga</p>
+        <h2 class="us-audience-title">{{ h.audiencesIntro.title|default:"Kome je namenjen Nutrikator?" }}</h2>
+        {% if h.audiencesIntro.text %}
+          <p class="us-audience-lead">{{ h.audiencesIntro.text }}</p>
+        {% endif %}
+
+        {% if audiences %}
+          <div class="us-board" data-us-board>
+            <div class="us-nav" role="tablist" aria-label="Kome je namenjen Nutrikator">
+              {% for aud in audiences %}
+                <button
+                  type="button"
+                  class="us-nav-btn"
+                  role="tab"
+                  id="us-tab-{{ aud.slug }}"
+                  aria-controls="us-panel-{{ aud.slug }}"
+                  aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                  tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                  data-us-step="{{ forloop.counter0 }}"
+                  data-us-slug="{{ aud.slug }}"
+                >
+                  <span class="us-nav-num" aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</span>
+                  <span class="us-nav-label">{{ aud.title }}</span>
+                </button>
+              {% endfor %}
+            </div>
+            <div class="us-stage">
+              {% for aud in audiences %}
+                <article
+                  class="us-panel"
+                  id="us-panel-{{ aud.slug }}"
+                  role="tabpanel"
+                  aria-labelledby="us-tab-{{ aud.slug }}"
+                  data-us-panel="{{ forloop.counter0 }}"
+                  {% if not forloop.first %}hidden{% endif %}
+                >
+                  <figure class="us-panel-photo">
+                    {% if aud.image %}
+                      <img src="{% static aud.image %}" alt="{{ aud.title }}">
+                    {% else %}
+                      <img src="{% static 'img/photos/healthy-bowl.jpg' %}" alt="{{ aud.title }}">
+                    {% endif %}
+                  </figure>
+                  <div class="us-panel-copy">
+                    <p class="us-kicker">{{ forloop.counter }} od {{ audiences|length }}</p>
+                    <h3 tabindex="-1">{{ aud.title }}</h3>
+                    {% if aud.intro %}<p>{{ aud.intro }}</p>{% endif %}
+                    {% if aud.paragraphs %}
+                      {% for p in aud.paragraphs %}
+                        <p>{{ p }}</p>
+                      {% endfor %}
+                    {% endif %}
+                    {% if aud.lead %}<p class="us-item-lead">{{ aud.lead }}</p>{% endif %}
+                    {% if aud.services %}
+                      <ul class="us-services">
+                        {% for s in aud.services %}
+                          <li>
+                            <strong>{{ s.title }}</strong>
+                            {% if s.text %}<span>{{ s.text }}</span>{% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                    {% if aud.outro %}<p>{{ aud.outro }}</p>{% endif %}
+                    <div class="us-actions">
+                      {% if not forloop.first %}
+                        <button type="button" class="btn btn-ghost" data-us-go="{{ forloop.counter0|add:'-1' }}">Prethodna</button>
+                      {% else %}
+                        <span></span>
+                      {% endif %}
+                      {% if not forloop.last %}
+                        <button type="button" class="btn btn-primary" data-us-go="{{ forloop.counter }}">Sledeća</button>
+                      {% else %}
+                        <a class="btn btn-primary" href="{% url 'paketi' %}">Pogledaj pakete</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <p class="us-audience-lead">Pokrenite <code>python manage.py load_content</code> da učitate publike.</p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="us-cta">
+      <div class="container">
+        <div class="us-cta-inner">
+          <div>
+            <h2>Spremni za deklaraciju?</h2>
+            <p>Pogledajte pakete i pošaljite podatke o proizvodu.</p>
+          </div>
+          <a class="btn btn-primary" href="{% url 'paketi' %}">
+            Pogledaj pakete
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {% endwith %}
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

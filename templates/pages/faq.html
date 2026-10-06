@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-faq{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    {% with h=home_content %}
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Pitanja</p>
+        <h1 class="section-title">{{ h.faqTitle|default:"Često postavljena pitanja" }}</h1>
+        <p class="section-lead">Izaberite pitanje. Odgovor se otvara odmah — možete ići redom ili preskočiti na ono što vas zanima.</p>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="container">
+        {% if faqs %}
+          <div class="faq-board" data-faq-board>
+            <div class="faq-nav" role="tablist" aria-label="Pitanja">
+              {% for item in faqs %}
+                <button
+                  type="button"
+                  class="faq-nav-btn"
+                  role="tab"
+                  id="faq-tab-{{ item.slug }}"
+                  aria-controls="faq-panel-{{ item.slug }}"
+                  aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                  tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                  data-faq-step="{{ forloop.counter0 }}"
+                  data-faq-slug="{{ item.slug }}"
+                >
+                  <span class="faq-nav-num" aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</span>
+                  <span class="faq-nav-q">{{ item.question }}</span>
+                </button>
+              {% endfor %}
+            </div>
+            <div class="faq-stage">
+              {% for item in faqs %}
+                <article
+                  class="faq-panel"
+                  id="faq-panel-{{ item.slug }}"
+                  role="tabpanel"
+                  aria-labelledby="faq-tab-{{ item.slug }}"
+                  data-faq-panel="{{ forloop.counter0 }}"
+                  {% if not forloop.first %}hidden{% endif %}
+                >
+                  <p class="faq-kicker">Pitanje {{ forloop.counter }} od {{ faqs|length }}</p>
+                  <h2 tabindex="-1">{{ item.question }}</h2>
+                  <div class="faq-answer">
+                    {% for p in item.answer %}
+                      <p>{{ p }}</p>
+                    {% endfor %}
+                  </div>
+                  <div class="faq-actions">
+                    {% if not forloop.first %}
+                      <button type="button" class="btn btn-ghost" data-faq-go="{{ forloop.counter0|add:'-1' }}">Prethodno pitanje</button>
+                    {% else %}
+                      <span></span>
+                    {% endif %}
+                    {% if not forloop.last %}
+                      <button type="button" class="btn btn-primary" data-faq-go="{{ forloop.counter }}">Sledeće pitanje</button>
+                    {% else %}
+                      <a class="btn btn-primary" href="/kako-naruciti">Kako naručiti</a>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <p>FAQ još nije učitan. Pokrenite <code>python manage.py load_content</code>.</p>
+        {% endif %}
+      </div>
+    </section>
+    {% endwith %}
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

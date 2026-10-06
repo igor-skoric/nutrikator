@@ -1,0 +1,81 @@
+{
+  "note": "Polja naručivanja nisu bila dostupna kao posebna WP stranica preko REST API-ja (verovatno Elementor forma / popup). Rekonstrulisano iz FAQ + Uslova poslovanja.",
+  "requiredFromClient": [
+    {
+      "id": "package",
+      "label": "Paket usluge",
+      "type": "select",
+      "options": ["basic", "standard", "premium"]
+    },
+    {
+      "id": "ingredients",
+      "label": "Informacije o sastojcima proizvoda",
+      "type": "textarea",
+      "hint": "Spisak sastojaka i tačnu masu svakog sastojka (npr. 100 g pšeničnog brašna, 50 g vode…)"
+    },
+    {
+      "id": "compoundIngredients",
+      "label": "Informacije o složenim sastojcima",
+      "type": "textarea",
+      "hint": "Spisak sastojaka i nutritivna vrednost sa deklaracije složenog sastojka"
+    },
+    {
+      "id": "compoundPhotos",
+      "label": "Fotografije deklaracija složenih sastojaka",
+      "type": "file",
+      "multiple": true
+    },
+    {
+      "id": "process",
+      "label": "Opis postupka pripreme proizvoda",
+      "type": "textarea"
+    },
+    {
+      "id": "massBefore",
+      "label": "Ukupna masa sastojaka pre pripreme, za jednu seriju proizvoda",
+      "type": "text"
+    },
+    {
+      "id": "massAfter",
+      "label": "Masa nakon pripreme jedne serije proizvoda",
+      "type": "text",
+      "optional": true
+    },
+    {
+      "id": "servingMass",
+      "label": "Masa jedne porcije",
+      "type": "text"
+    },
+    {
+      "id": "netWeight",
+      "label": "Neto težina pakovanja",
+      "type": "text"
+    },
+    {
+      "id": "name",
+      "label": "Ime i prezime",
+      "type": "text"
+    },
+    {
+      "id": "email",
+      "label": "E-mail adresa",
+      "type": "email"
+    },
+    {
+      "id": "phone",
+      "label": "Broj telefona",
+      "type": "tel"
+    },
+    {
+      "id": "address",
+      "label": "Adresa",
+      "type": "text"
+    },
+    {
+      "id": "acceptTerms",
+      "label": "Prihvatam Uslove poslovanja i Politiku privatnosti",
+      "type": "checkbox",
+      "required": true
+    }
+  ]
+}

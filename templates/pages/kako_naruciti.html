@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-flow{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    {% with h=home_content %}
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Kako naručiti</p>
+        <h1 class="section-title">{{ h.process.title }}</h1>
+        {% if h.process.lead %}<p class="section-lead">{{ h.process.lead }}</p>{% endif %}
+      </div>
+    </section>
+    <section class="page-section page-section--paper">
+      <div class="container">
+        <div class="order-wizard" data-order-wizard>
+          <ol class="order-steps" role="tablist" aria-label="Koraci naručivanja" style="--order-count: {{ h.process.steps|length }}">
+            {% for step in h.process.steps %}
+              <li class="order-step{% if forloop.first %} is-current{% endif %}">
+                <button
+                  type="button"
+                  class="order-step-btn"
+                  role="tab"
+                  id="order-tab-{{ forloop.counter }}"
+                  aria-controls="order-panel-{{ forloop.counter }}"
+                  aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                  tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                  data-order-step="{{ forloop.counter0 }}"
+                >
+                  <span class="order-step-num" aria-hidden="true">{{ forloop.counter }}</span>
+                  <span class="order-step-label">{% if step.title %}{{ step.title }}{% else %}{{ step }}{% endif %}</span>
+                </button>
+              </li>
+            {% endfor %}
+          </ol>
+
+          {% for step in h.process.steps %}
+            <article
+              class="order-panel"
+              id="order-panel-{{ forloop.counter }}"
+              role="tabpanel"
+              aria-labelledby="order-tab-{{ forloop.counter }}"
+              data-order-panel="{{ forloop.counter0 }}"
+              {% if not forloop.first %}hidden{% endif %}
+            >
+              <p class="order-panel-kicker">Korak {{ forloop.counter }} od {{ h.process.steps|length }}</p>
+              <h2 tabindex="-1">{% if step.title %}{{ step.title }}{% else %}{{ step }}{% endif %}</h2>
+              {% if step.text %}<p class="order-panel-text">{{ step.text }}</p>{% endif %}
+              {% if step.points %}
+                <ul class="flow-points">
+                  {% for point in step.points %}
+                    <li>{{ point }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if forloop.first %}
+                <a class="flow-link" href="/paketi">Pogledajte pakete</a>
+              {% endif %}
+              <div class="order-actions">
+                {% if not forloop.first %}
+                  <button type="button" class="btn btn-ghost" data-order-go="{{ forloop.counter0|add:'-1' }}">Prethodni korak</button>
+                {% else %}
+                  <span></span>
+                {% endif %}
+                {% if not forloop.last %}
+                  <button type="button" class="btn btn-primary" data-order-go="{{ forloop.counter }}">Sledeći korak</button>
+                {% else %}
+                  <a class="btn btn-primary" href="/paketi">Pogledajte pakete</a>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+        {% if h.process.contactHint %}
+          <p class="process-hint">{{ h.process.contactHint }}</p>
+        {% endif %}
+      </div>
+    </section>
+    {% endwith %}
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

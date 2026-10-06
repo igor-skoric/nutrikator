@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-vs{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+
+    <section class="page-intro">
+      <div class="container vs-wrap">
+        <p class="section-kicker">Nutrikator vs laboratorija</p>
+        <h1 class="section-title">Isti cilj.<br><span class="vs-em">Jednostavniji put.</span></h1>
+        <p class="section-lead">Uporedite kako izgleda put od proizvoda do nutritivne deklaracije.</p>
+      </div>
+    </section>
+
+    <section class="vs-compare" aria-labelledby="vs-compare-title">
+      <div class="container vs-wrap">
+        <h2 id="vs-compare-title" class="visually-hidden">Poređenje puta do nutritivne deklaracije</h2>
+
+        <div class="vs-board">
+          <header class="vs-colhead is-lab">
+            <h3>Laboratorija</h3>
+            <p>Klasična analiza</p>
+          </header>
+          <header class="vs-colhead is-nutri">
+            <h3>Nutrikator</h3>
+            <p>Proračun online</p>
+          </header>
+
+          <article class="vs-pair" data-vs-step>
+            <h3 class="vs-pair-label visually-hidden"><span>01</span> Šta šaljete?</h3>
+            <div class="vs-side is-lab">
+              <p class="vs-who">Laboratorija</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <path d="M78 30h58c7 20 12 42 12 62 0 14-7 22-18 22H84c-11 0-18-8-18-22 0-20 5-42 12-62Z" fill="#E7E4E0" stroke="#8C8681" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M86 30h42" stroke="#8C8681" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M98 58h28M98 72h22" stroke="#C8C3BE" stroke-width="1.8" stroke-linecap="round"/>
+                  <rect x="176" y="62" width="48" height="46" rx="8" fill="#F7F5F3" stroke="#8C8681" stroke-width="1.8"/>
+                  <rect x="186" y="48" width="28" height="16" rx="4" fill="#E7E4E0" stroke="#8C8681" stroke-width="1.8"/>
+                  <path d="M184 84h32" stroke="#C8C3BE" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Uzorak</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Fizički uzorak</span><span class="vs-t-m">Fizički uzorak</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Potrebno je pripremiti i dostaviti uzorak proizvoda.</p>
+              <p class="vs-side-text vs-tx-m">Potrebno je pripremiti uzorak.</p>
+            </div>
+            <div class="vs-bridge" aria-hidden="true">
+              <span class="vs-bridge-num">01</span>
+              <svg class="vs-bridge-arrow" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-mob-down" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v12M7 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-side is-nutri">
+              <span class="vs-check" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="vs-who">Nutrikator</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <rect x="78" y="18" width="144" height="104" rx="16" fill="#fff" stroke="#B7DFC6" stroke-width="1.6"/>
+                  <rect x="94" y="34" width="78" height="9" rx="4.5" fill="#178A45"/>
+                  <circle cx="100" cy="62" r="3.5" fill="#178A45"/>
+                  <rect x="112" y="58" width="84" height="7" rx="3.5" fill="#E8E3DE"/>
+                  <circle cx="100" cy="80" r="3.5" fill="#178A45" opacity=".72"/>
+                  <rect x="112" y="76" width="68" height="7" rx="3.5" fill="#E8E3DE"/>
+                  <circle cx="100" cy="98" r="3.5" fill="#178A45" opacity=".4"/>
+                  <rect x="112" y="94" width="52" height="7" rx="3.5" fill="#E8E3DE"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Receptura</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Samo receptura i podaci</span><span class="vs-t-m">Receptura i podaci</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Dostavite podatke o proizvodu online.</p>
+              <p class="vs-side-text vs-tx-m">Sve šaljete online.</p>
+            </div>
+          </article>
+
+          <article class="vs-pair" data-vs-step>
+            <h3 class="vs-pair-label visually-hidden"><span>02</span> Dostavljanje</h3>
+            <div class="vs-side is-lab">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <p class="vs-who">Laboratorija</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <path d="M36 102h228" stroke="#D5D0CB" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round"/>
+                  <rect x="62" y="58" width="86" height="40" rx="7" fill="#E7E4E0" stroke="#8C8681" stroke-width="1.8"/>
+                  <path d="M148 70h34l22 28h-56V70Z" fill="#F7F5F3" stroke="#8C8681" stroke-width="1.8" stroke-linejoin="round"/>
+                  <circle cx="92" cy="102" r="9" fill="#fff" stroke="#8C8681" stroke-width="1.8"/>
+                  <circle cx="176" cy="102" r="9" fill="#fff" stroke="#8C8681" stroke-width="1.8"/>
+                  <rect x="78" y="42" width="26" height="18" rx="3" fill="#F7F5F3" stroke="#8C8681" stroke-width="1.6"/>
+                  <path d="M214 78h28M214 88h20" stroke="#C8C3BE" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Transport</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Transport i dostavljanje</span><span class="vs-t-m">Transport uzorka</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Uzorak se fizički dostavlja laboratoriji.</p>
+            </div>
+            <div class="vs-bridge" aria-hidden="true">
+              <span class="vs-bridge-num">02</span>
+              <svg class="vs-bridge-arrow" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-mob-down" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v12M7 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-side is-nutri">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="vs-check" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="vs-who">Nutrikator</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <rect x="86" y="24" width="128" height="82" rx="10" fill="#fff" stroke="#313131" stroke-width="1.8"/>
+                  <rect x="98" y="36" width="104" height="58" rx="6" fill="#F3FBF6"/>
+                  <path d="M150 50v24M150 50l-7 7M150 50l7 7" stroke="#178A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="128" y="78" width="28" height="8" rx="2" fill="#fff" stroke="#B7DFC6" stroke-width="1.2"/>
+                  <path d="M74 112h152" stroke="#E4DDD8" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Online</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Sve online</span><span class="vs-t-m">Sve online</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Nema slanja fizičkog uzorka.</p>
+            </div>
+          </article>
+
+          <article class="vs-pair" data-vs-step>
+            <h3 class="vs-pair-label visually-hidden"><span>03</span> Obrada</h3>
+            <div class="vs-side is-lab">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <p class="vs-who">Laboratorija</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <path d="M118 24h28M124 24v28l-28 46a22 22 0 0 0 19 34h58a22 22 0 0 0 19-34l-28-46V24" fill="#F7F5F3" stroke="#8C8681" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M112 92h78" stroke="#C8C3BE" stroke-width="1.8" stroke-linecap="round"/>
+                  <rect x="196" y="36" width="22" height="62" rx="8" fill="#E7E4E0" stroke="#8C8681" stroke-width="1.8"/>
+                  <path d="M196 70h22" stroke="#C8C3BE" stroke-width="1.8"/>
+                  <path d="M202 28h10" stroke="#8C8681" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Analiza</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Laboratorijska analiza</span><span class="vs-t-m">Laboratorijska analiza</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Analiza se obavlja na fizičkom uzorku.</p>
+            </div>
+            <div class="vs-bridge" aria-hidden="true">
+              <span class="vs-bridge-num">03</span>
+              <svg class="vs-bridge-arrow" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-mob-down" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v12M7 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-side is-nutri">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="vs-check" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="vs-who">Nutrikator</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 140">
+                  <rect x="28" y="36" width="96" height="72" rx="12" fill="#fff" stroke="#E4D5CF" stroke-width="1.6"/>
+                  <text x="76" y="58" text-anchor="middle" fill="#313131" font-family="Manrope, sans-serif" font-size="11" font-weight="700">Receptura</text>
+                  <rect x="42" y="68" width="68" height="5" rx="2.5" fill="#E8E3DE"/>
+                  <rect x="42" y="80" width="52" height="5" rx="2.5" fill="#E8E3DE"/>
+                  <rect x="42" y="92" width="40" height="5" rx="2.5" fill="#E8E3DE"/>
+                  <path d="M136 72h28M156 66l8 6-8 6" stroke="#178A45" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="176" y="24" width="96" height="96" rx="12" fill="#fff" stroke="#178A45" stroke-width="1.6"/>
+                  <text x="224" y="46" text-anchor="middle" fill="#178A45" font-family="Manrope, sans-serif" font-size="11" font-weight="700">Deklaracija</text>
+                  <rect x="192" y="58" width="64" height="6" rx="3" fill="#D9F2E3"/>
+                  <rect x="192" y="72" width="64" height="6" rx="3" fill="#E8E3DE"/>
+                  <rect x="192" y="86" width="48" height="6" rx="3" fill="#E8E3DE"/>
+                  <rect x="192" y="100" width="40" height="6" rx="3" fill="#E8E3DE"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Proračun</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Stručni proračun</span><span class="vs-t-m">Stručni proračun</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Proračun na osnovu recepture i relevantnih podataka.</p>
+            </div>
+          </article>
+
+          <article class="vs-pair is-finale" data-vs-step>
+            <h3 class="vs-pair-label visually-hidden"><span>04</span> Rezultat</h3>
+            <div class="vs-side is-lab">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <p class="vs-who">Laboratorija</p>
+              <div class="vs-scene" aria-hidden="true">
+                <svg class="vs-illu" viewBox="0 0 300 150">
+                  <rect x="108" y="28" width="84" height="96" rx="14" fill="#F7F5F3" stroke="#8C8681" stroke-width="1.8"/>
+                  <path d="M108 52h84" stroke="#8C8681" stroke-width="1.8"/>
+                  <path d="M128 20v16M172 20v16" stroke="#8C8681" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="132" cy="72" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="150" cy="72" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="168" cy="72" r="3.2" fill="#A39E99"/>
+                  <circle cx="132" cy="90" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="150" cy="90" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="168" cy="90" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="132" cy="108" r="3.2" fill="#C8C3BE"/>
+                  <circle cx="150" cy="108" r="3.2" fill="#C8C3BE"/>
+                </svg>
+              </div>
+              <p class="vs-flow">Rezultat</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Rok za rezultat</span><span class="vs-t-m">Rok zavisi od laboratorije</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Rok zavisi od laboratorije i vrste analize.</p>
+            </div>
+            <div class="vs-bridge" aria-hidden="true">
+              <span class="vs-bridge-num">04</span>
+              <svg class="vs-bridge-arrow" viewBox="0 0 24 24"><path d="M4 12h14M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-mob-down" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v12M7 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="vs-side is-nutri">
+              <span class="vs-drop" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="vs-check" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p class="vs-who">Nutrikator</p>
+              <div class="vs-scene" aria-hidden="true">
+                <div class="vs-day">
+                  <svg class="vs-clock" viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(23,138,69,.28)" stroke-width="3"/>
+                    <path d="M32 16v18l11 6" fill="none" stroke="#178A45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p><strong>1</strong><span>DAN</span></p>
+                </div>
+              </div>
+              <p class="vs-flow">Deklaracija</p>
+              <p class="vs-side-title">
+                <span class="vs-mark" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" class="vs-ring"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg viewBox="0 0 20 20" class="vs-tick"><path d="M4.6 10.2 8.2 13.6 15.4 6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><span class="vs-t-d">Obično za 1 dan</span><span class="vs-t-m">Obično za 1 dan</span></span>
+              </p>
+              <p class="vs-side-text vs-tx-d">Gotova nutritivna deklaracija obično već za 1 dan.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vs-after">
+      <div class="container vs-wrap">
+        <ul class="vs-perks">
+          <li class="vs-perk">
+            <span class="vs-perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 8.2 12 4l8 4.2v7.6L12 20l-8-4.2V8.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 12.2 20 8.2M12 12.2V20M12 12.2 4 8.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong><span class="vs-lab-d">Bez slanja uzorka</span><span class="vs-lab-m">Bez uzorka</span></strong>
+              <p>Sve radite online.</p>
+            </div>
+          </li>
+          <li class="vs-perk">
+            <span class="vs-perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v4.2l2.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong><span class="vs-lab-d">Brži proces</span><span class="vs-lab-m">Za 1 dan</span></strong>
+              <p>Obično za 1 dan.</p>
+            </div>
+          </li>
+          <li class="vs-perk">
+            <span class="vs-perk-icon" aria-hidden="true">
+              <svg class="vs-ico-d" viewBox="0 0 24 24"><path d="M12 4v16M8 8.2c0-1.8 1.8-3.2 4-3.2s4 1.4 4 3.2-1.7 2.9-4 2.9-4 1.1-4 3 1.8 3.2 4 3.2 4-1.4 4-3.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="vs-ico-m" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 20h8M12 16.5V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <strong><span class="vs-lab-d">Povoljniji proces</span><span class="vs-lab-m">Online</span></strong>
+              <p>Bez troška laboratorijske analize kada je proračun odgovarajući metod.</p>
+            </div>
+          </li>
+          <li class="vs-perk">
+            <span class="vs-perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 16.2V20h3.8L19 8.8a2.1 2.1 0 0 0-3-3L4.8 16.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M13.2 6.2 17.6 10.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <strong><span class="vs-lab-d">Lake izmene</span><span class="vs-lab-m">Lake izmene</span></strong>
+              <p>Promenite recepturu i ažurirajte proračun.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="vs-cta-banner">
+          <div class="vs-cta-copy">
+            <p class="vs-cta-kicker">Spremni za sledeći korak?</p>
+            <h2>Imate recepturu?</h2>
+            <p>Pošaljite podatke o proizvodu i započnite izradu nutritivne deklaracije.</p>
+            <a class="btn btn-primary" href="{% url 'paketi' %}">
+              Izradi deklaraciju
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+          <div class="vs-cta-art" aria-hidden="true">
+            <svg class="vs-cta-pack" viewBox="0 0 120 150">
+              <path d="M36 34h48l10 16v62c0 8-6 14-14 14H40c-8 0-14-6-14-14V50l10-16Z" fill="#fff" stroke="#313131" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M32 50h56" stroke="#313131" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M46 34V24h28v10" fill="none" stroke="#313131" stroke-width="1.8" stroke-linejoin="round"/>
+              <rect x="44" y="66" width="32" height="28" rx="4" fill="#FFF4F0" stroke="#FC634B" stroke-width="1.4"/>
+              <rect x="50" y="74" width="20" height="4" rx="2" fill="#FC634B"/>
+              <path d="M50 84h14" stroke="#E4D4CE" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <div class="vs-cta-sheet">
+              <p>Nutritivna deklaracija</p>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <p class="vs-note">Laboratorijska analiza i proračun nisu ista metoda. Odgovarajući pristup zavisi od proizvoda i potrebne vrste podataka.</p>
+      </div>
+    </section>
+
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

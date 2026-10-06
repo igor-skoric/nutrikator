@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-paketi{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    {% with h=home_content %}
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Cene</p>
+        <h1 class="section-title">{{ h.packagesSectionTitle|default:"Paketi usluga" }}</h1>
+        {% if h.packagesLead %}<p class="section-lead">{{ h.packagesLead }}</p>{% endif %}
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="container">
+        <div class="price-board">
+          {% for pkg in packages %}
+            <article class="price-card{% if pkg.featured %} is-featured{% endif %}" style="--pkg: {{ pkg.color|default:'#FC634B' }}">
+              <div class="price-card-body">
+                {% if pkg.subtitle %}<p class="price-badge">{{ pkg.subtitle }}</p>{% endif %}
+                <p class="price-name">{{ pkg.name }}</p>
+                <p class="price-amount">
+                  <strong>{% with raw=pkg.price|floatformat:0 %}{% if raw|length > 3 %}{{ raw|slice:":-3" }}.{{ raw|slice:"-3:" }}{% else %}{{ raw }}{% endif %}{% endwith %}</strong>
+                  <span>{{ pkg.currency }}</span>
+                </p>
+                <ul class="price-features">
+                  {% for feature in pkg.features %}
+                    <li>
+                      <svg viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M4.5 10.5 8 14l7.5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span>{{ feature }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <div class="price-card-foot">
+                  {% if pkg.cta %}
+                    <a class="price-cta{% if pkg.featured %} is-solid{% endif %}" href="{% if company.email_info %}mailto:{{ company.email_info }}{% else %}mailto:info@nutrikator.com{% endif %}">{{ pkg.cta }}</a>
+                  {% endif %}
+                  {% if pkg.sample_report %}
+                    <a class="price-sample" href="{{ pkg.sample_report }}" target="_blank" rel="noopener">Pogledajte primer izveštaja</a>
+                  {% endif %}
+                </div>
+              </div>
+            </article>
+          {% empty %}
+            <p>Paketi još nisu učitani. Pokrenite <code>python manage.py load_content</code>.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endwith %}
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

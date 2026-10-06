@@ -1,0 +1,1147 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}is-loading{% endblock %}
+
+{% block content %}
+
+  <div class="loader" id="pageLoader" role="status" aria-live="polite" aria-busy="true">
+    <div class="loader-inner">
+      <div class="loader-mark">
+        <svg viewBox="0 0 24 24" fill="none" width="26" height="26" aria-hidden="true">
+          <path d="M7 3h8l3 3v15H7V3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M14 3v4h4M9 11h6M9 14h6M9 17h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="loader-brand">Nutrikator</p>
+      <p class="loader-status" id="loaderStatus">Priprema deklaracije…</p>
+      <div class="loader-bar"><i id="loaderBar"></i></div>
+    </div>
+  </div>
+
+  {% include "partials/site_header.html" %}
+
+  <section class="hero">
+    <div class="container hero-shell">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Nutritivne deklaracije za proizvođače hrane</p>
+
+        <h1>
+          Pošaljite recepturu.<br>
+          Dobijate gotovu<br>
+          <span class="accent">nutritivnu deklaraciju.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Vi nam dostavite recepturu i podatke o proizvodu. Mi radimo proračun i izrađujemo nutritivnu deklaraciju spremnu za ambalažu.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/paketi" class="btn btn-primary">
+            Izradi deklaraciju
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <ol class="hero-process" aria-label="Kako funkcioniše usluga">
+          <li>
+            <span>01</span>
+            Receptura
+          </li>
+          <li aria-hidden="true" class="hero-process-arrow">→</li>
+          <li>
+            <span>02</span>
+            Stručni proračun
+          </li>
+          <li aria-hidden="true" class="hero-process-arrow">→</li>
+          <li>
+            <span>03</span>
+            Gotova deklaracija
+          </li>
+        </ol>
+      </div>
+
+      <div class="hero-visual">
+        <div class="product-composition" aria-hidden="false">
+          <span class="product-composition-bg" aria-hidden="true"></span>
+          <img
+            class="product-package"
+            src="{% static 'img/photos/cookie-package.png' %}?v=2"
+            alt="Pakovanje keksa sa brusnicom i belom čokoladom"
+          >
+          <aside class="hero-nutrition" aria-label="Primer gotove nutritivne deklaracije" title="Prevucite da pomerite" tabindex="0">
+            <p class="hero-nutrition-kicker">Nutritivna deklaracija</p>
+            <p class="hero-nutrition-basis">na 100 g proizvoda</p>
+            <dl class="hero-nutrition-list">
+              <div>
+                <dt>Energija</dt>
+                <dd>1867 kJ / 446 kcal</dd>
+              </div>
+              <div>
+                <dt>Masti</dt>
+                <dd>16,4 g</dd>
+              </div>
+              <div class="is-sub">
+                <dt>od kojih zasićene</dt>
+                <dd>2,1 g</dd>
+              </div>
+              <div>
+                <dt>Ugljeni hidrati</dt>
+                <dd>62,3 g</dd>
+              </div>
+              <div class="is-sub">
+                <dt>od kojih šećeri</dt>
+                <dd>7,8 g</dd>
+              </div>
+              <div>
+                <dt>Proteini</dt>
+                <dd>8,9 g</dd>
+              </div>
+              <div>
+                <dt>So</dt>
+                <dd>0,68 g</dd>
+              </div>
+              <div>
+                <dt>Vlakna</dt>
+                <dd>8,4 g</dd>
+              </div>
+            </dl>
+            <p class="hero-nutrition-ready">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m7.5 12.2 2.6 2.6 6.4-6.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Spremno za ambalažu
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <a href="#primeri" class="hero-jump">
+      <span>Pogledajte primer deklaracije</span>
+      <svg class="hero-jump-cue" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </section>
+
+  <div class="hero-break" role="presentation">
+    <div class="hero-break-wave-wrap">
+      <svg class="hero-break-wave" viewBox="0 0 2880 80" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0 34C120 58 240 70 360 54C480 38 600 14 720 28C840 42 960 68 1080 58C1200 48 1320 22 1440 34C1560 46 1680 70 1800 58C1920 46 2040 18 2160 30C2280 42 2400 66 2520 56C2640 46 2760 20 2880 34V80H0V34Z">
+          <animate
+            attributeName="d"
+            dur="14s"
+            repeatCount="indefinite"
+            calcMode="spline"
+            keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+            keyTimes="0;0.33;0.66;1"
+            values="
+              M0 34C120 58 240 70 360 54C480 38 600 14 720 28C840 42 960 68 1080 58C1200 48 1320 22 1440 34C1560 46 1680 70 1800 58C1920 46 2040 18 2160 30C2280 42 2400 66 2520 56C2640 46 2760 20 2880 34V80H0V34Z;
+              M0 48C120 22 240 12 360 34C480 56 600 70 720 48C840 26 960 10 1080 28C1200 46 1320 66 1440 48C1560 30 1680 12 1800 32C1920 52 2040 70 2160 50C2280 30 2400 14 2520 34C2640 54 2760 68 2880 48V80H0V48Z;
+              M0 26C120 48 240 66 360 44C480 22 600 8 720 30C840 52 960 68 1080 46C1200 24 1320 10 1440 28C1560 46 1680 66 1800 44C1920 22 2040 8 2160 28C2280 48 2400 66 2520 44C2640 22 2760 12 2880 28V80H0V26Z;
+              M0 34C120 58 240 70 360 54C480 38 600 14 720 28C840 42 960 68 1080 58C1200 48 1320 22 1440 34C1560 46 1680 70 1800 58C1920 46 2040 18 2160 30C2280 42 2400 66 2520 56C2640 46 2760 20 2880 34V80H0V34Z
+            "
+          />
+        </path>
+      </svg>
+    </div>
+    <div class="hero-break-body">
+      <div class="container hero-break-inner">
+        <p class="hero-break-kicker">Kako ide proces</p>
+        <p class="hero-break-flow">
+          <span>Receptura</span>
+          <span class="hero-break-sep" aria-hidden="true"></span>
+          <span>Stručni proračun</span>
+          <span class="hero-break-sep" aria-hidden="true"></span>
+          <span>Gotova deklaracija</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="why-band" aria-labelledby="why-title">
+    <div class="container">
+      <h2 class="section-title" id="why-title">Zašto Nutrikator</h2>
+      <ul class="why-grid">
+        <li class="why-item">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Obično za 1 dan</h3>
+            <p>Brzo do gotove deklaracije.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4.5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M8 20.5h8M12 16.5v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Sve online</h3>
+            <p>Bez fizičkog slanja uzorka.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <span class="why-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 16.5V20h3.5L19 8.5a2 2 0 0 0-2.8-2.8L4.7 16.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M13.5 6.5l3.2 3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Lake izmene</h3>
+            <p>Promenite recepturu → ažurira se proračun.</p>
+          </div>
+        </li>
+      </ul>
+      <a class="why-more" href="{% url 'benefiti' %}">
+        Pogledajte sve benefite
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="decl-band" id="primeri" tabindex="-1">
+    <div class="container decl-band-grid">
+      <div class="decl-band-copy">
+        <p class="section-kicker" id="decl-viewport-start">Primer</p>
+        <h2 class="section-title">Kako deklaracija izgleda</h2>
+        <p class="section-lead">Isti proizvod, tri obima. Izaberite paket, pa otvorite Više za stavke koje taj paket dodaje.</p>
+        <div class="decl-tabs" role="tablist" aria-label="Primer deklaracije po paketu">
+          <button class="decl-tab" type="button" role="tab" id="decl-tab-basic" aria-controls="decl-basic" aria-selected="false" data-decl-tab="basic">Basic</button>
+          <button class="decl-tab is-active" type="button" role="tab" id="decl-tab-standard" aria-controls="decl-standard" aria-selected="true" data-decl-tab="standard">Standard</button>
+          <button class="decl-tab" type="button" role="tab" id="decl-tab-premium" aria-controls="decl-premium" aria-selected="false" data-decl-tab="premium">Premium</button>
+        </div>
+      </div>
+
+      <div class="decl-stage">
+        <article class="hero-sheet is-open" id="decl-basic" role="tabpanel" aria-labelledby="decl-tab-basic" data-decl-panel="basic" hidden>
+          <h2 class="hero-sheet-title">Primer deklaracije</h2>
+          <p class="hero-sheet-kicker">Basic</p>
+          <p class="hero-sheet-name">Reforma torta</p>
+          <p class="hero-sheet-desc">KOLAČ OD MASNOG BISKVITNOG TESTA SA DODATIM ORASIMA FILOVAN KREMOM SA ŽUMANCIMA I ČOKOLADOM I ŠLAG KREMOM</p>
+          <p class="hero-sheet-ingredients"><strong>Sastojci:</strong> <strong>jaja</strong>, praškasta mešavina za pripremu šlag pene (šećer, glukozni sirup, hidrogenizovana biljna ulja (palmino, kokosovo), emulgatori (471, E472a, E472b), maltodekstrin, <strong>mlečni proteini</strong>, skrob, stabilizator (E340), zgušnjivač (E463, E401, E415), aroma vanile), šećer, voda, <strong>orasi</strong> (9.7%), margarin (delimično hidrogenizovana sojina mast, voda, mešavina biljnih ulja (suncokretovo, palmino, palminih koštica), kuhinjska so, emulgatori (<strong>sojin lecitin</strong>, E471), konzervans (E202), kiselina (E330), boja (E160a), aroma), čokolada (6.5%) (šećer, kakao masa, kakao maslac, emulgator (<strong>sojin lecitin</strong>, E476), aroma), kakao tabla (6.5%) (šećer, hidrogenizovana biljna mast, kakao prah sa smanjenim sadržajem masti, emulgator (<strong>sojin lecitin</strong>), aroma), suncokretovo ulje, <strong>pšenično brašno</strong>, prašak za pecivo (sredstva za dizanje testa (E450, E500, E503), kukuruzni skrob).</p>
+          <table>
+            <caption class="visually-hidden">Basic primer nutritivne deklaracije</caption>
+            <tbody>
+              <tr class="is-head">
+                <th scope="col">Prosečna hranljiva vrednost</th>
+                <th scope="col">100g</th>
+              </tr>
+              <tr>
+                <th scope="row">Energija</th>
+                <td><span>1645 kJ</span><span>394 kcal</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Masti</th>
+                <td>24g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih zasićene masne kiseline</th>
+                <td>8.9g</td>
+              </tr>
+              <tr>
+                <th scope="row">Ugljeni hidrati</th>
+                <td>37g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih šećeri</th>
+                <td>34g</td>
+              </tr>
+              <tr>
+                <th scope="row">Proteini</th>
+                <td>6g</td>
+              </tr>
+              <tr>
+                <th scope="row">So</th>
+                <td>0.3g</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="hero-sheet-meta">
+            <p><span>Proizvod stavlja na tržište:</span> <strong>Proslastičarnica "PRIMER"</strong></p>
+            <p><span>Neto količina:</span> <strong>1500 g</strong></p>
+            <p><span>Serija / Lot:</span> <strong></strong></p>
+            <p><span>Najbolje upotrebiti do:</span> <strong></strong></p>
+            <p><span>Uslovi čuvanja:</span> <strong>Čuvati na temperaturi od +4°C</strong></p>
+          </div>
+          <div class="hero-sheet-more-wrap">
+            <button class="hero-sheet-more" type="button" aria-expanded="true">
+              <span class="hero-sheet-more-label">Manje</span>
+            </button>
+            <span class="hero-sheet-more-cue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 12H9M15 8l-4 4 4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="hero-sheet is-open" id="decl-standard" role="tabpanel" aria-labelledby="decl-tab-standard" data-decl-panel="standard">
+          <h2 class="hero-sheet-title">Primer deklaracije</h2>
+          <p class="hero-sheet-kicker">Standard</p>
+          <p class="hero-sheet-name">Reforma torta</p>
+          <p class="hero-sheet-desc">KOLAČ OD MASNOG BISKVITNOG TESTA SA DODATIM ORASIMA FILOVAN KREMOM SA ŽUMANCIMA I ČOKOLADOM I ŠLAG KREMOM</p>
+          <p class="hero-sheet-ingredients"><strong>Sastojci:</strong> <strong>jaja</strong>, praškasta mešavina za pripremu šlag pene (šećer, glukozni sirup, hidrogenizovana biljna ulja (palmino, kokosovo), emulgatori (471, E472a, E472b), maltodekstrin, <strong>mlečni proteini</strong>, skrob, stabilizator (E340), zgušnjivač (E463, E401, E415), aroma vanile), šećer, voda, <strong>orasi</strong> (9.7%), margarin (delimično hidrogenizovana sojina mast, voda, mešavina biljnih ulja (suncokretovo, palmino, palminih koštica), kuhinjska so, emulgatori (<strong>sojin lecitin</strong>, E471), konzervans (E202), kiselina (E330), boja (E160a), aroma), čokolada (6.5%) (šećer, kakao masa, kakao maslac, emulgator (<strong>sojin lecitin</strong>, E476), aroma), kakao tabla (6.5%) (šećer, hidrogenizovana biljna mast, kakao prah sa smanjenim sadržajem masti, emulgator (<strong>sojin lecitin</strong>), aroma), suncokretovo ulje, <strong>pšenično brašno</strong>, prašak za pecivo (sredstva za dizanje testa (E450, E500, E503), kukuruzni skrob).</p>
+          <table>
+            <caption class="visually-hidden">Standard primer nutritivne deklaracije</caption>
+            <tbody>
+              <tr class="is-head">
+                <th scope="col">Prosečna hranljiva vrednost</th>
+                <th scope="col">100g</th>
+                <th scope="col">porcija 80g</th>
+              </tr>
+              <tr>
+                <th scope="row">Energija</th>
+                <td><span>1645 kJ</span><span>394 kcal</span></td>
+                <td><span>1316 kJ</span><span>315 kcal</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Masti</th>
+                <td>24g</td>
+                <td>19.2g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih zasićene masne kiseline</th>
+                <td>8.9g</td>
+                <td>7.1g</td>
+              </tr>
+              <tr>
+                <th scope="row">Ugljeni hidrati</th>
+                <td>37g</td>
+                <td>29.6g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih šećeri</th>
+                <td>34g</td>
+                <td>27.2g</td>
+              </tr>
+              <tr>
+                <th scope="row">Proteini</th>
+                <td>6g</td>
+                <td>4.8g</td>
+              </tr>
+              <tr>
+                <th scope="row">So</th>
+                <td>0.3g</td>
+                <td>0.24g</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Vlakna</th>
+                <td>1.6g</td>
+                <td>1.3g</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Skrob</th>
+                <td>2.1g</td>
+                <td>1.7g</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="hero-sheet-meta">
+            <p><span>Referentni unos, 100 g:</span> <strong>energija 20%, masti 34%, šećeri 38%, so 5%</strong></p>
+            <p><span>Proizvod stavlja na tržište:</span> <strong>Proslastičarnica "PRIMER"</strong></p>
+            <p><span>Neto količina:</span> <strong>1500 g</strong></p>
+            <p><span>Uslovi čuvanja:</span> <strong>Čuvati na temperaturi od +4°C</strong></p>
+          </div>
+          <div class="hero-sheet-more-wrap">
+            <button class="hero-sheet-more" type="button" aria-expanded="true">
+              <span class="hero-sheet-more-label">Manje</span>
+            </button>
+            <span class="hero-sheet-more-cue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 12H9M15 8l-4 4 4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="hero-sheet is-open" id="decl-premium" role="tabpanel" aria-labelledby="decl-tab-premium" data-decl-panel="premium" hidden>
+          <h2 class="hero-sheet-title">Primer deklaracije</h2>
+          <p class="hero-sheet-kicker">Premium</p>
+          <p class="hero-sheet-name">Reforma torta</p>
+          <p class="hero-sheet-desc">KOLAČ OD MASNOG BISKVITNOG TESTA SA DODATIM ORASIMA FILOVAN KREMOM SA ŽUMANCIMA I ČOKOLADOM I ŠLAG KREMOM</p>
+          <p class="hero-sheet-ingredients"><strong>Sastojci:</strong> <strong>jaja</strong>, praškasta mešavina za pripremu šlag pene (šećer, glukozni sirup, hidrogenizovana biljna ulja (palmino, kokosovo), emulgatori (471, E472a, E472b), maltodekstrin, <strong>mlečni proteini</strong>, skrob, stabilizator (E340), zgušnjivač (E463, E401, E415), aroma vanile), šećer, voda, <strong>orasi</strong> (9.7%), margarin (delimično hidrogenizovana sojina mast, voda, mešavina biljnih ulja (suncokretovo, palmino, palminih koštica), kuhinjska so, emulgatori (<strong>sojin lecitin</strong>, E471), konzervans (E202), kiselina (E330), boja (E160a), aroma), čokolada (6.5%) (šećer, kakao masa, kakao maslac, emulgator (<strong>sojin lecitin</strong>, E476), aroma), kakao tabla (6.5%) (šećer, hidrogenizovana biljna mast, kakao prah sa smanjenim sadržajem masti, emulgator (<strong>sojin lecitin</strong>), aroma), suncokretovo ulje, <strong>pšenično brašno</strong>, prašak za pecivo (sredstva za dizanje testa (E450, E500, E503), kukuruzni skrob).</p>
+          <table>
+            <caption class="visually-hidden">Premium primer nutritivne deklaracije</caption>
+            <tbody>
+              <tr class="is-head">
+                <th scope="col">Prosečna hranljiva vrednost</th>
+                <th scope="col">100g</th>
+                <th scope="col">porcija 80g</th>
+              </tr>
+              <tr>
+                <th scope="row">Energija</th>
+                <td><span>1645 kJ</span><span>394 kcal</span></td>
+                <td><span>1316 kJ</span><span>315 kcal</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Masti</th>
+                <td>24g</td>
+                <td>19.2g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih zasićene masne kiseline</th>
+                <td>8.9g</td>
+                <td>7.1g</td>
+              </tr>
+              <tr>
+                <th scope="row">Ugljeni hidrati</th>
+                <td>37g</td>
+                <td>29.6g</td>
+              </tr>
+              <tr>
+                <th scope="row">Od kojih šećeri</th>
+                <td>34g</td>
+                <td>27.2g</td>
+              </tr>
+              <tr>
+                <th scope="row">Proteini</th>
+                <td>6g</td>
+                <td>4.8g</td>
+              </tr>
+              <tr>
+                <th scope="row">So</th>
+                <td>0.3g</td>
+                <td>0.24g</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Vlakna</th>
+                <td>1.6g</td>
+                <td>1.3g</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Vitamin D</th>
+                <td>0.4 µg</td>
+                <td>0.3 µg</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Kalcijum</th>
+                <td>48 mg</td>
+                <td>38 mg</td>
+              </tr>
+              <tr class="is-extra">
+                <th scope="row">Gvožđe</th>
+                <td>1.1 mg</td>
+                <td>0.9 mg</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="decl-score"><span>Nutri-Score</span><strong>D</strong></p>
+          <div class="hero-sheet-meta">
+            <p><span>Nutritivna izjava:</span> <strong>nizak sadržaj soli</strong></p>
+            <p><span>Traffic light:</span> <strong>masti visoko, šećeri visoko, so nisko</strong></p>
+            <p><span>Proizvod stavlja na tržište:</span> <strong>Proslastičarnica "PRIMER"</strong></p>
+            <p><span>Neto količina:</span> <strong>1500 g</strong></p>
+            <p><span>Uslovi čuvanja:</span> <strong>Čuvati na temperaturi od +4°C</strong></p>
+          </div>
+          <div class="hero-sheet-more-wrap">
+            <button class="hero-sheet-more" type="button" aria-expanded="true">
+              <span class="hero-sheet-more-label">Manje</span>
+            </button>
+            <span class="hero-sheet-more-cue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 12H9M15 8l-4 4 4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="report-band" id="izvestaji" aria-labelledby="report-title">
+    <div class="container">
+      <div class="report-band-copy">
+        <p class="section-kicker">Primeri</p>
+        <h2 class="section-title" id="report-title">Izveštaji koje dobijate</h2>
+        <p class="section-lead">Isti proizvod, tri paketa. Svaki izveštaj prati obim usluge koju izaberete.</p>
+      </div>
+      <div class="report-grid">
+        <article class="report-card" style="--pkg:#4cb233">
+          <div class="report-card-head">
+            <h3>Basic</h3>
+            <p>Nutritivna tabela na 100 g</p>
+          </div>
+          <button
+            class="report-paper"
+            type="button"
+            data-report-open
+            data-title="Basic"
+            data-pdf="{% static 'reports/izvestaj-basic.pdf' %}"
+            data-pages="{% static 'reports/izvestaj-basic.png' %}"
+            aria-label="Pogledaj primer izveštaja za Basic paket"
+          >
+            <img src="{% static 'reports/izvestaj-basic.png' %}" alt="Primer izveštaja za Basic paket, Reforma torta">
+          </button>
+          <a class="report-pdf" href="{% static 'reports/izvestaj-basic.pdf' %}" target="_blank" rel="noopener">Otvori PDF</a>
+        </article>
+
+        <article class="report-card" style="--pkg:#fc634b">
+          <div class="report-card-head">
+            <h3>Standard</h3>
+            <p>Porcija i % referentnog unosa</p>
+          </div>
+          <button
+            class="report-paper"
+            type="button"
+            data-report-open
+            data-title="Standard"
+            data-pdf="{% static 'reports/izvestaj-standard.pdf' %}"
+            data-pages="{% static 'reports/izvestaj-standard.png' %}"
+            aria-label="Pogledaj primer izveštaja za Standard paket"
+          >
+            <img src="{% static 'reports/izvestaj-standard.png' %}" alt="Primer izveštaja za Standard paket, Reforma torta">
+          </button>
+          <a class="report-pdf" href="{% static 'reports/izvestaj-standard.pdf' %}" target="_blank" rel="noopener">Otvori PDF</a>
+        </article>
+
+        <article class="report-card is-multi" style="--pkg:#3caea7">
+          <div class="report-card-head">
+            <h3>Premium</h3>
+            <p>Vitamini, minerali i traffic light</p>
+          </div>
+          <div class="report-sheet">
+            <button
+              class="report-paper"
+              type="button"
+              data-report-open
+              data-title="Premium"
+              data-pdf="{% static 'reports/izvestaj-premium.pdf' %}"
+              data-pages="{% static 'reports/izvestaj-premium.png' %}|{% static 'reports/izvestaj-premium-2.png' %}"
+              aria-label="Pogledaj primer izveštaja za Premium paket, dve strane"
+            >
+              <img src="{% static 'reports/izvestaj-premium.png' %}" alt="Primer izveštaja za Premium paket, prva strana, Reforma torta">
+            </button>
+          </div>
+          <a class="report-pdf" href="{% static 'reports/izvestaj-premium.pdf' %}" target="_blank" rel="noopener">Otvori PDF · 2 strane</a>
+        </article>
+      </div>
+    </div>
+
+    <dialog class="report-dialog" id="report-dialog" aria-labelledby="report-dialog-title">
+      <div class="report-dialog-bar">
+        <p id="report-dialog-title" data-report-dialog-title>Izveštaj</p>
+        <a data-report-dialog-pdf href="{% static 'reports/izvestaj-basic.pdf' %}" target="_blank" rel="noopener">Otvori PDF</a>
+        <button type="button" data-report-close aria-label="Zatvori">Zatvori</button>
+      </div>
+      <div class="report-dialog-pages" data-report-dialog-pages></div>
+    </dialog>
+  </section>
+
+  <section class="offer-band" id="paketi" aria-labelledby="offer-title">
+    <div class="container">
+      {% with h=home_content %}
+      <div class="offer-band-copy">
+        <p class="section-kicker">Cene</p>
+        <h2 class="section-title" id="offer-title">{{ h.packagesSectionTitle|default:"Paketi usluga" }}</h2>
+        {% if h.packagesLead %}<p class="section-lead">{{ h.packagesLead }}</p>{% endif %}
+      </div>
+      {% endwith %}
+      <div class="offer-grid">
+        {% for pkg in packages %}
+          <article class="offer-card{% if pkg.featured %} is-featured{% endif %}" style="--pkg:{{ pkg.color|default:'#fc634b' }}">
+            {% if pkg.subtitle %}<p class="offer-pill">{{ pkg.subtitle }}</p>{% endif %}
+            <div class="offer-top">
+              <h3>{{ pkg.name }}</h3>
+              <p class="offer-price">
+                <strong>{% with raw=pkg.price|floatformat:0 %}{% if raw|length > 3 %}{{ raw|slice:":-3" }}.{{ raw|slice:"-3:" }}{% else %}{{ raw }}{% endif %}{% endwith %}</strong>
+                <span>{{ pkg.currency }}</span>
+              </p>
+            </div>
+            <ul class="offer-features">
+              {% for feature in pkg.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+            {% if pkg.cta %}
+              <a class="btn offer-cta{% if pkg.featured %} is-solid{% endif %}" href="{% if company.email_info %}mailto:{{ company.email_info }}{% else %}mailto:info@nutrikator.com{% endif %}">
+                {{ pkg.cta }}
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            {% endif %}
+            {% if pkg.sample_report %}
+              <a class="offer-sample" href="{{ pkg.sample_report }}" target="_blank" rel="noopener">Pogledajte primer izveštaja</a>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="procedure-ask" aria-labelledby="procedure-ask-title">
+    <div class="container procedure-ask-inner">
+      <div class="procedure-ask-copy">
+        <p class="section-kicker">Procedura</p>
+        <h2 class="section-title" id="procedure-ask-title">Kako procedura funkcioniše?</h2>
+        <p class="section-lead">Od paketa do gotove deklaracije u sandučetu. Pet koraka, bez slanja uzorka.</p>
+      </div>
+      <a class="btn btn-primary" href="/kako-naruciti">
+        Pogledajte korake
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <div class="industry-strip">
+    <div class="container">
+      <p>Koriste nas proizvođači iz različitih industrija</p>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 20V9l5-5 5 5v11H7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.6"/></svg>
+          Mlečni proizvodi
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18h16M6 18l2-8h8l2 8M9 10V7h6v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pekarski proizvodi
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4c4 3 7 7 7 11a7 7 0 1 1-14 0c0-4 3-8 7-11Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          Mesni proizvodi
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/></svg>
+          Gotova jela
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8l1 7H7L8 4Zm1 7v9h6v-9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Pića
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 16c2-6 4-9 7-9s5 3 7 9H5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 16v3h6v-3" stroke="currentColor" stroke-width="1.6"/></svg>
+          Slatkiši i grickalice
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="3" width="8" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Dodaci ishrani
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14v11H5V8Zm3-3h8l1 3H7l1-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Ostali proizvodi
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block extra_js %}
+{% include "partials/page_scripts.html" %}
+<script>
+    (() => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const pageLoader = document.getElementById("pageLoader");
+      const loaderStatus = document.getElementById("loaderStatus");
+      const loaderBar = document.getElementById("loaderBar");
+
+      const finishLoader = () => {
+        document.body.classList.remove("is-loading");
+        document.querySelector(".hero")?.classList.add("is-ready");
+        if (!pageLoader) return;
+        pageLoader.classList.add("is-done");
+        pageLoader.setAttribute("aria-busy", "false");
+        setTimeout(() => {
+          if (pageLoader.parentNode) pageLoader.remove();
+        }, 450);
+      };
+
+      const runLoader = () => {
+        if (!pageLoader) {
+          document.body.classList.remove("is-loading");
+          document.querySelector(".hero")?.classList.add("is-ready");
+          return;
+        }
+
+        if (reduce) {
+          finishLoader();
+          return;
+        }
+
+        const phases = [
+          { at: 0, pct: 22, text: "Priprema deklaracije…" },
+          { at: 260, pct: 58, text: "Usklađivanje sa regulativom…" },
+          { at: 520, pct: 100, text: "Spremno" }
+        ];
+
+        phases.forEach((phase) => {
+          setTimeout(() => {
+            if (loaderStatus) loaderStatus.textContent = phase.text;
+            if (loaderBar) loaderBar.style.width = phase.pct + "%";
+          }, phase.at);
+        });
+
+        setTimeout(finishLoader, 780);
+      };
+
+      (function audienceTabs() {
+        const tabs = [...document.querySelectorAll("[data-audience-tab]")];
+        const panels = [...document.querySelectorAll("[data-audience-panel]")];
+        if (!tabs.length) return;
+        const activate = (id) => {
+          tabs.forEach((tab) => {
+            const on = tab.dataset.audienceTab === id;
+            tab.classList.toggle("is-active", on);
+            tab.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.audiencePanel !== id;
+          });
+        };
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => activate(tab.dataset.audienceTab));
+        });
+      })();
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", runLoader);
+      } else {
+        runLoader();
+      }
+
+      document.querySelectorAll(".hero-sheet-more").forEach((button) => {
+        const sheet = button.closest(".hero-sheet");
+        const label = button.querySelector(".hero-sheet-more-label");
+        if (!sheet || !label) return;
+
+        let animating = false;
+        let closedHeight = 0;
+        const DURATION_MS = 520;
+        const EASING = "cubic-bezier(.22,.61,.36,1)";
+
+        const syncFanHeight = (height) => {
+          const fanStage = document.querySelector(".decl-stage.is-fan");
+          if (!fanStage) return;
+          const panels = [...fanStage.querySelectorAll("[data-decl-panel]")];
+          const tallest = panels.reduce((max, panel) => {
+            if (panel === sheet && typeof height === "number") {
+              return Math.max(max, height);
+            }
+            return Math.max(max, panel.offsetHeight);
+          }, 0);
+          fanStage.style.minHeight = Math.round(tallest + 56) + "px";
+        };
+
+        const measureCollapsedHeight = () => {
+          const wasOpen = sheet.classList.contains("is-open");
+          const prevHeight = sheet.style.height;
+          const prevOverflow = sheet.style.overflow;
+          const prevTransition = sheet.style.transition;
+
+          sheet.style.transition = "none";
+          sheet.style.height = "auto";
+          sheet.style.overflow = "hidden";
+          sheet.classList.remove("is-open");
+          const height = sheet.getBoundingClientRect().height;
+          if (wasOpen) sheet.classList.add("is-open");
+          sheet.style.height = prevHeight;
+          sheet.style.overflow = prevOverflow;
+          sheet.style.transition = prevTransition;
+          return height;
+        };
+
+        const clearSheetInline = () => {
+          sheet.style.height = "";
+          sheet.style.overflow = "";
+          sheet.style.transition = "";
+        };
+
+        button.addEventListener("click", () => {
+          if (animating) return;
+
+          const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          const willOpen = !sheet.classList.contains("is-open");
+          const fanStage = document.querySelector(".decl-stage.is-fan");
+
+          if (reduce) {
+            sheet.classList.toggle("is-open", willOpen);
+            button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            label.textContent = willOpen ? "Manje" : "Više";
+            syncFanHeight();
+            return;
+          }
+
+          animating = true;
+          button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          label.textContent = willOpen ? "Manje" : "Više";
+
+          const startHeight = sheet.getBoundingClientRect().height;
+          let endHeight = 0;
+
+          if (willOpen) {
+            closedHeight = startHeight;
+            sheet.classList.add("is-open");
+            sheet.style.transition = "none";
+            sheet.style.height = "auto";
+            endHeight = sheet.getBoundingClientRect().height;
+          } else {
+            endHeight = closedHeight || measureCollapsedHeight();
+          }
+
+          sheet.style.transition = "none";
+          sheet.style.overflow = "hidden";
+          sheet.style.height = startHeight + "px";
+          void sheet.offsetHeight;
+
+          sheet.style.transition = `height ${DURATION_MS}ms ${EASING}`;
+          sheet.style.height = endHeight + "px";
+
+          if (fanStage) {
+            fanStage.style.transition = `min-height ${DURATION_MS}ms ${EASING}`;
+            syncFanHeight(endHeight);
+          }
+
+          let finished = false;
+          const finish = () => {
+            if (finished) return;
+            finished = true;
+            if (!willOpen) sheet.classList.remove("is-open");
+            clearSheetInline();
+            if (fanStage) fanStage.style.transition = "";
+            syncFanHeight();
+            animating = false;
+          };
+
+          sheet.addEventListener(
+            "transitionend",
+            (event) => {
+              if (event.target !== sheet || event.propertyName !== "height") return;
+              finish();
+            },
+            { once: true }
+          );
+          window.setTimeout(finish, DURATION_MS + 80);
+
+          if (willOpen) {
+            window.setTimeout(() => {
+              const header = document.querySelector(".site-header");
+              const headerH = header ? header.getBoundingClientRect().height : 0;
+              const top = sheet.getBoundingClientRect().top + window.scrollY - headerH - 16;
+              window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+            }, Math.round(DURATION_MS * 0.35));
+          }
+        });
+      });
+
+      const scrollToDeclSection = () => {
+        const hero = document.querySelector(".hero");
+        const section = document.getElementById("primeri");
+        const start = document.getElementById("decl-viewport-start");
+        if (!section) return;
+
+        const scrollY = window.scrollY;
+        const docTop = (el) => el.getBoundingClientRect().top + scrollY;
+        const header = document.querySelector(".site-header");
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+
+        const heroBottom = hero ? docTop(hero) + hero.offsetHeight : 0;
+        const sectionTop = docTop(section);
+        const contentTop = start ? docTop(start) - headerHeight : sectionTop;
+
+        const top = Math.max(heroBottom, contentTop, sectionTop);
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        history.replaceState(null, "", "#primeri");
+      };
+
+      document.querySelector(".hero-jump")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        scrollToDeclSection();
+      });
+
+      const declTabs = [...document.querySelectorAll("[data-decl-tab]")];
+      const declPanels = [...document.querySelectorAll("[data-decl-panel]")];
+      const declStage = document.querySelector(".decl-stage");
+      const declOrder = ["basic", "standard", "premium"];
+
+      if (declTabs.length && declPanels.length) {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const fanMq = window.matchMedia("(min-width: 900px)");
+        let animTimer = 0;
+
+        const getActiveDecl = () =>
+          declTabs.find((tab) => tab.classList.contains("is-active"))?.dataset.declTab ?? "standard";
+
+        const syncFanHeight = () => {
+          if (!declStage || !fanMq.matches) {
+            if (declStage) declStage.style.minHeight = "";
+            return;
+          }
+          const tallest = declPanels.reduce(
+            (max, panel) => Math.max(max, panel.offsetHeight),
+            0
+          );
+          declStage.style.minHeight = Math.round(tallest + 56) + "px";
+        };
+
+        const applyFanSlots = (id) => {
+          if (!declStage) return;
+          const activeIndex = declOrder.indexOf(id);
+          declStage.classList.add("is-fan");
+
+          declPanels.forEach((panel) => {
+            const panelId = panel.dataset.declPanel;
+            const index = declOrder.indexOf(panelId);
+            const delta = index - activeIndex;
+            let slot = "center";
+            if (delta < 0) slot = delta === -1 ? "left" : "left-far";
+            if (delta > 0) slot = delta === 1 ? "right" : "right-far";
+
+            panel.hidden = false;
+            panel.dataset.slot = slot;
+            panel.setAttribute("aria-hidden", slot === "center" ? "false" : "true");
+            panel.classList.remove("is-entering");
+          });
+
+          requestAnimationFrame(syncFanHeight);
+        };
+
+        const applySingle = (id) => {
+          if (declStage) {
+            declStage.classList.remove("is-fan");
+            declStage.style.minHeight = "";
+          }
+
+          window.clearTimeout(animTimer);
+
+          declPanels.forEach((panel) => {
+            const on = panel.dataset.declPanel === id;
+            panel.removeAttribute("data-slot");
+            panel.removeAttribute("aria-hidden");
+            panel.classList.remove("is-entering");
+
+            if (!on) {
+              panel.hidden = true;
+              return;
+            }
+
+            panel.hidden = false;
+            if (reduceMotion) return;
+
+            void panel.offsetWidth;
+            panel.classList.add("is-entering");
+            animTimer = window.setTimeout(() => {
+              panel.classList.remove("is-entering");
+            }, 650);
+          });
+        };
+
+        const showDecl = (id, { force = false } = {}) => {
+          if (!declOrder.includes(id)) return;
+          if (!force && getActiveDecl() === id) return;
+
+          declTabs.forEach((tab) => {
+            const on = tab.dataset.declTab === id;
+            tab.classList.toggle("is-active", on);
+            tab.setAttribute("aria-selected", on ? "true" : "false");
+          });
+
+          if (fanMq.matches) applyFanSlots(id);
+          else applySingle(id);
+        };
+
+        declTabs.forEach((tab) => {
+          tab.addEventListener("click", () => showDecl(tab.dataset.declTab));
+        });
+
+        declPanels.forEach((panel) => {
+          panel.addEventListener("click", (event) => {
+            if (!fanMq.matches) return;
+            const id = panel.dataset.declPanel;
+            if (!id || id === getActiveDecl()) return;
+            if (event.target.closest("button, a")) event.preventDefault();
+            showDecl(id);
+          });
+        });
+
+        if (declStage) {
+          let touchStartX = 0;
+          let touchStartY = 0;
+
+          declStage.addEventListener(
+            "touchstart",
+            (event) => {
+              if (event.touches.length !== 1) return;
+              touchStartX = event.touches[0].clientX;
+              touchStartY = event.touches[0].clientY;
+            },
+            { passive: true }
+          );
+
+          declStage.addEventListener(
+            "touchend",
+            (event) => {
+              const touch = event.changedTouches[0];
+              if (!touch) return;
+              const deltaX = touch.clientX - touchStartX;
+              const deltaY = touch.clientY - touchStartY;
+              if (Math.abs(deltaX) < 52 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+
+              const index = declOrder.indexOf(getActiveDecl());
+              if (index < 0) return;
+              if (deltaX < 0 && index < declOrder.length - 1) showDecl(declOrder[index + 1]);
+              if (deltaX > 0 && index > 0) showDecl(declOrder[index - 1]);
+            },
+            { passive: true }
+          );
+        }
+
+        const onFanModeChange = () => showDecl(getActiveDecl(), { force: true });
+        fanMq.addEventListener("change", onFanModeChange);
+        window.addEventListener("resize", () => {
+          if (fanMq.matches) syncFanHeight();
+        });
+
+        showDecl(getActiveDecl(), { force: true });
+      }
+
+      (function nutritionDrag() {
+        const card = document.querySelector(".hero-nutrition");
+        const stage = document.querySelector(".product-composition");
+        if (!card || !stage) return;
+
+        let dragging = false;
+        let pointerId = null;
+        let startX = 0;
+        let startY = 0;
+        let originLeft = 0;
+        let originTop = 0;
+
+        const clamp = (left, top) => {
+          const maxLeft = Math.max(0, stage.clientWidth - card.offsetWidth);
+          const maxTop = Math.max(0, stage.clientHeight - card.offsetHeight);
+          return {
+            left: Math.min(Math.max(0, left), maxLeft),
+            top: Math.min(Math.max(0, top), maxTop)
+          };
+        };
+
+        const freezeToPixels = () => {
+          if (card.classList.contains("is-placed")) return;
+          const stageRect = stage.getBoundingClientRect();
+          const cardRect = card.getBoundingClientRect();
+          const next = clamp(cardRect.left - stageRect.left, cardRect.top - stageRect.top);
+          card.style.left = next.left + "px";
+          card.style.top = next.top + "px";
+          card.style.right = "auto";
+          card.style.bottom = "auto";
+          card.classList.add("is-placed");
+        };
+
+        const onMove = (event) => {
+          if (!dragging || event.pointerId !== pointerId) return;
+          const next = clamp(
+            originLeft + (event.clientX - startX),
+            originTop + (event.clientY - startY)
+          );
+          card.style.left = next.left + "px";
+          card.style.top = next.top + "px";
+        };
+
+        const onUp = (event) => {
+          if (!dragging || event.pointerId !== pointerId) return;
+          dragging = false;
+          pointerId = null;
+          card.classList.remove("is-dragging");
+          card.releasePointerCapture?.(event.pointerId);
+        };
+
+        card.addEventListener("pointerdown", (event) => {
+          if (event.button !== 0) return;
+          freezeToPixels();
+          dragging = true;
+          pointerId = event.pointerId;
+          startX = event.clientX;
+          startY = event.clientY;
+          originLeft = parseFloat(card.style.left) || 0;
+          originTop = parseFloat(card.style.top) || 0;
+          card.classList.add("is-dragging");
+          card.setPointerCapture(event.pointerId);
+          event.preventDefault();
+        });
+
+        card.addEventListener("pointermove", onMove);
+        card.addEventListener("pointerup", onUp);
+        card.addEventListener("pointercancel", onUp);
+
+        window.addEventListener("resize", () => {
+          if (!card.classList.contains("is-placed")) return;
+          const next = clamp(parseFloat(card.style.left) || 0, parseFloat(card.style.top) || 0);
+          card.style.left = next.left + "px";
+          card.style.top = next.top + "px";
+        });
+      })();
+
+      (function industryStripReveal() {
+        const strip = document.querySelector(".industry-strip");
+        if (!strip) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          strip.classList.add("is-inview");
+          return;
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          strip.classList.add("is-inview");
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              strip.classList.add("is-inview");
+              observer.disconnect();
+            });
+          },
+          { threshold: 0.28, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        observer.observe(strip);
+      })();
+    })();
+  </script>
+  <script>
+    (() => {
+      const dialog = document.getElementById("report-dialog");
+      if (!dialog || typeof dialog.showModal !== "function") return;
+      const title = dialog.querySelector("[data-report-dialog-title]");
+      const pdf = dialog.querySelector("[data-report-dialog-pdf]");
+      const pages = dialog.querySelector("[data-report-dialog-pages]");
+
+      document.querySelectorAll("[data-report-open]").forEach((button) => {
+        button.addEventListener("click", () => {
+          title.textContent = button.dataset.title || "Izveštaj";
+          pdf.href = button.dataset.pdf || "#";
+          pages.replaceChildren();
+          (button.dataset.pages || "").split("|").filter(Boolean).forEach((src) => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = (button.dataset.title || "Izveštaj") + ", primer izveštaja";
+            pages.append(img);
+          });
+          dialog.showModal();
+        });
+      });
+
+      dialog.querySelector("[data-report-close]")?.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+
+{% endblock %}

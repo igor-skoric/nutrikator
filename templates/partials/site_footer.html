@@ -1,0 +1,32 @@
+{% load static %}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="Nutrikator početna">
+        <img src="{% static 'img/logo-dark.png' %}" alt="Nutrikator">
+      </a>
+      {% if company and company.tagline %}<p>{{ company.tagline }}</p>{% endif %}
+      {% if company and company.address_footer %}<p>{{ company.address_footer }}</p>{% endif %}
+    </div>
+    <div>
+      {% if company and company.email_info %}<p><a href="mailto:{{ company.email_info }}">{{ company.email_info }}</a></p>{% endif %}
+      {% if company and company.phone_sales %}<p>{{ company.phone_sales }}</p>{% endif %}
+      {% if company and company.phone_office %}<p>{{ company.phone_office }}</p>{% endif %}
+    </div>
+    <div class="footer-links">
+      {% if home_content and home_content.footerLinks %}
+        {% for link in home_content.footerLinks %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="/uslovi-poslovanja">Uslovi poslovanja</a>
+        <a href="/politika-privatnosti">Politika privatnosti</a>
+        <a href="/politika-upotrebe-kolacica">Politika kolačića</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="container footer-copy">
+    {% if company %}{{ company.legal_name|default:company.name }}{% else %}Nutrikator{% endif %}
+    {% if company and company.pib %} · PIB {{ company.pib }}{% endif %}
+  </div>
+</footer>

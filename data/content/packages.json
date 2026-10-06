@@ -1,0 +1,93 @@
+{
+  "note": "Na live sajtu postoje DVE cene. Aktivni paketi (WordPress CPT `paketi`, ažurirano maj 2025) su 6.000 / 8.000 / 12.000 RSD. Starija Elementor sekcija i Uslovi poslovanja i dalje pominju 4.000 / 6.000 i drugačiji opis paketa. Za novi sajt koristiti `current`.",
+  "current": [
+    {
+      "id": "basic",
+      "name": "Basic",
+      "price": 6000,
+      "currency": "RSD",
+      "featured": false,
+      "color": "#4cb233",
+      "cta": "Izaberi BASIC",
+      "features": [
+        "Izračunavanje energetske i nutritivne vrednosti proizvoda",
+        "Svi drugi obavezni elementi deklaracije (naziv proizvoda, spisak sastojaka…)"
+      ],
+      "sampleReport": "/static/reports/izvestaj-basic.pdf",
+      "sampleLabel": "https://nutrikator.com/wp-content/uploads/2024/05/nutrikator_nalepnica-basic2.jpg"
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "subtitle": "preporučena usluga",
+      "price": 8000,
+      "currency": "RSD",
+      "featured": true,
+      "color": "#fc634b",
+      "cta": "Izaberi STANDARD",
+      "features": [
+        "Basic paket +",
+        "Energetska vrednost i količina hranljivih materija po porciji proizvoda",
+        "Proširena nutritivna tabela (vlakna, nezasićene masne kiseline, polinezasićene masne kiseline, skrob)",
+        "Procenati referentnih unosa hranjivih materija na 100g ili po porciji"
+      ],
+      "sampleReport": "/static/reports/izvestaj-standard.pdf",
+      "sampleLabel": "https://nutrikator.com/wp-content/uploads/2024/05/nutrikator_nalepnica-standard.jpg"
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "price": 12000,
+      "currency": "RSD",
+      "featured": false,
+      "color": "#3caea7",
+      "cta": "Izaberi PREMIUM",
+      "features": [
+        "Standard paket",
+        "Proširena nutritivna tabela (sa vitaminima i mineralima)",
+        "Nutritivne i zdravstvene izjave",
+        "Klasifikacija vašeg proizvoda prema Traffic light-u i Nutri-Score sistemu"
+      ],
+      "sampleReport": "/static/reports/izvestaj-premium.pdf",
+      "sampleLabel": "https://nutrikator.com/wp-content/uploads/2024/05/nutrikator_nalepnica-premijum.jpg"
+    }
+  ],
+  "legacyOnHomepage": [
+    {
+      "id": "basic-legacy",
+      "name": "Basic",
+      "price": 4000,
+      "features": [
+        "Izračunavanje energetske i nutritivne vrednosti proizvoda",
+        "Svi drugi obavezni elementi deklaracije (naziv proizvoda, spisak sastojaka...)"
+      ]
+    },
+    {
+      "id": "standard-legacy",
+      "name": "Standard",
+      "price": 6000,
+      "features": [
+        "Basic paket",
+        "Energetska vrednost i količina hranljivih materija po porciji proizvoda",
+        "Procenat referentnog unosa na 100g ili po porciji"
+      ]
+    },
+    {
+      "id": "premium-legacy",
+      "name": "Premium",
+      "price": 12000,
+      "features": [
+        "Standard paket",
+        "Proširena nutritivna tabela (sa vitaminima i mineralima)",
+        "Nutritivne i zdravstvene izjave",
+        "Klasifikacija vašeg proizvoda prema Traffic light-u i Nutri-Score sistemu"
+      ]
+    }
+  ],
+  "termsDefinition": {
+    "note": "Uslovi poslovanja definišu pakete drugačije od homepage kartica.",
+    "basic": "izračunavanje energetske i nutritivne vrednosti proizvoda",
+    "standard": "BASIC + propisani naziv proizvoda, spisak sastojaka proizvoda prema opadajućem redosledu zastupljenosti sa adekvatno istaknutim alergenima, svi drugi obavezni elementi deklaracije",
+    "premium": "BASIC + STANDARD + proširena nutritivna tabela, sa dodatim elementima po Vašem izboru (vlakna, mono- i polinezasićene masne kiseline, vitamini i minerali), nutritivne i zdravstvene izjave, klasifikacija prema nutritivnom profilu (Nutri-Score, Traffic light)"
+  }
+}

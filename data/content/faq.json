@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "id": "kako-generise",
+      "question": "Kako NUTRIKATOR generiše nutritivne tabele?",
+      "answer": [
+        "NUTRIKATOR koristi softverski proračun i baze nutritivnih podataka kako bi generisao nutritivne tabele. Softverski proračun se zasniva na proračunu iz nutritivnog sastava sastojaka koji čine proizvod i primene odgovarajućih faktora. Baza nutritivnih podataka koju koristmo je zvanična baza Evropske agencije za infornacije o hrani (EuroFIR). Metoda proračuna, koja se primenjuje u našem softverskom rešenju je preporučena takođe od EurpFIR-a. Metoda podrazumeva primenu faktora, koji omogućavanju uključivanje u proračun svih promena u nutritivnom sastavu koje nastaju kao rezultat tehnološkog procesa pripreme.",
+        "Da bi rezultati izračunavanja bili što tačniji, važno je da klijent dostavi detaljne informacije o proizvodu, kao što su spisak sastojaka, masa upotrebljenih sastojaka, nutritivne informacije za svaki “složeni sastojak” i način pripreme, mase proizvoda pre i posle pripreme.",
+        "Naš postupak je potpuno online, što znači da nema potrebe da se brinete o slanju fizičkih uzoraka. Sve informacije se mogu se dostaviti elektronskim putem, izborom paketa usluge na sajtu ili putem e-maila. Na taj način osiguravamo brzu i efikasnu izradu nutritivne tabele i deklaracije za vaš proizvod."
+      ]
+    },
+    {
+      "id": "zakonski",
+      "question": "Da li je metoda proračuna nutritivnih sastojaka zakonski dozvoljeni postupak za deklarisanje hrane?",
+      "answer": [
+        "Proračun nutritivnih sastojaka je zakonski dozvoljeni postupak za dobijanje nutritivnih informacija i energetske vrednosti hrane u svrhu deklarisanja, i zakonski dozvoljena alternativa laboratorijskoj analizi hrane.",
+        "Član 33, Pravilnik o deklarisanju, označavanju i reklamiranju hrane (“Sl. glasnik RS”, br. 19/2017, 16/2018, 17/2020, 118/2020, 17/2022, 23/2022, 30/2022.) definiše da su energetska vrednost i količina hranljivih materija u odnosu na svaki pojedinačni slučaj, prosečne vrednosti koje se dobijaju na osnovu:",
+        "1) analize hrane proizvođača;",
+        "2) proračuna na osnovu poznatih ili stvarnih prosečnih vrednosti upotrebljenih sastojaka;",
+        "3) proračuna iz utvrđenih i opšte prihvaćenih podataka",
+        "Informacije na vašoj deklaraciji moraju da budu u granicama dozvoljenog odstupanja propisanog za svaki nutrijent, a način na koji se do ovih informacija dolazi je stvar vaše lične odluke!"
+      ]
+    },
+    {
+      "id": "prednosti",
+      "question": "Koje su prednosti metode proračuna u odnosu na laboratorijsku analizu?",
+      "answer": [
+        "Proračun nutritivnih informacija za deklarisanje hrane donosi niz prednosti u odnosu na tradicionalnu laboratorijsku analizu. Ključnih prednosti su",
+        "1. Brzina: Proračun nutritivnih informacija je brži u poređenju sa laboratorijskom analizom. Laboratorijska analiza zahteva vreme za uzorkovanje hrane, transport uzoraka do laboratorije, pripremu uzorka za analizu, samu analizu i tumačenje rezultata. S druge strane, proračun se može obaviti brzo, koristeći softverske algoritme koji uzimaju u obzir sastojke hrane i nutritivne vrednosti sastojaka iz baza podataka.",
+        "2. Cenovna pristupačnost: Laboratorijske analize uglavnom imaju visoku cenu, naročito za pojedine sastojke, kao što su vitamini i minerali, čija analiza zahteva specijalizovanu opremu i potrošnju skupih hemikalija. Proračun nutritivnih informacija je mnogo ekonomičniji jer se oslanja na već postojeće podatke o nutritivnim vrednostima sastojaka hrane.",
+        "3. Fleksibilnost: U koliko dođe do promene nekog od sastojaka ili uslova procesa veoma brzo i lako se može izvršiti izmena već postojećeg proračuna, dok laboratorijska analiza mora da se ponovi u celosti.",
+        "Važno je napomenuti da proračun nutritivnih informacija ima određena ograničenja. Tačnost proračuna zavisi od tačnosti i dostupnosti podataka o sastojcima hrane."
+      ]
+    },
+    {
+      "id": "potrebne-informacije",
+      "question": "Koje informacije o proizvodu su potrebne da bi generisali nutritivnu tabelu?",
+      "answer": [
+        "Molimo vas da budete spremni da nam dostavite sledeće informacije:",
+        "1. Informacije o sastojcima proizvoda: Spisak sastojaka i tačnu masu svakog sastojka (na primer, 100 grama pšeničnog brašna, 50 grama vode, 20 grama sode bikarbone, itd.).",
+        "2. Informacije o složenim sastojcima: Spisak sastojaka za svaki složeni sastojak, kako je navedeno na deklaraciji složenog sastojka (na primer, prašak za pecivo koji sadrži kukuruzni skrob, monokalcijum fosfat, soda bikarbonu – natrijum bikarbonat) i nutritivnu vrednost složenog sastojka. Najlakši način da dostavite informacije o složenom sastojku je da slikate deklaraciju i nutritivnu tabelu, i pošaljete nam. Ukoliko uslugu naručujete popunjavanjem on-line formulara, umetnite sliku u predviđeni box. Ukoliko nam potrebne informacije dostavljate mailom, pošaljite i sliku deklaracije složenog sastojka.",
+        "3. Opis postupka pripreme proizvoda.",
+        "4. Ukupnu masa sastojaka pre pripreme, za jednu seriju proizvoda.",
+        "5. Masa nakon pripreme jedne serije proizvoda (u koliko je poznata)",
+        "6. Masa jedne porcije",
+        "7. Neto težina pakovanja.",
+        "Ove informacije su ključne za preciznu analizu nutritivnog sastava vašeg proizvoda i izradu tačne nutritivne tabele."
+      ]
+    },
+    {
+      "id": "spisak-sastojaka",
+      "question": "Šta je spisak sastojaka hrane?",
+      "answer": [
+        "Spisak sastojaka je obavezan podatak na deklaraciji upakovane hrane prema Pravilniku o deklarisanju, označavanju i reklamiranju hrane (“Sl. glasnik RS”, br. 19/2017, 16/2018, 17/2020, 118/2020, 17/2022, 23/2022 i 30/2022). U spisku sastojaka navode se svi sastojci hrane, uključujući prehrambene arome, aditive i enzime, koji se koristi u proizvodnji ili pripremi hrane, a prisutni su u gotovom proizvodu, čak i u promenjenom obliku. Sastojci se navode prema opadajućem redosledu, a na osnovu mase tih sastojaka koja je utvrđena u vreme njihove upotrebe pri proizvodnji hrane.",
+        "Spisak sastojaka omogućava potrošačima da lako prepoznaju sve komponente prisutne u gotovom proizvodu, čak i kada su u promenjenom obliku."
+      ]
+    },
+    {
+      "id": "slozeni-sastojak",
+      "question": "Šta je “složeni sastojak” hrane?",
+      "answer": [
+        "Složeni sastojak hrane je svaki sastojak koji se sastoji od dva ili više sastojaka",
+        "Primer složenog sastojka hrane može biti “preliv za salatu”. Preliv za salatu može da sadrži sastojke poput ulja, sirćeta, soli, začina, šećera, senfa i drugih aditiva. Svaki od ovih sastojaka ima svoje nutritivne vrednosti i doprinosi ukupnom nutritivnom sastavu preliva za salatu."
+      ]
+    },
+    {
+      "id": "zasto-slozeni",
+      "question": "Zašto je potrebno dostaviti nutritivne informacije i spisak sastojaka za složene sastojke koji se koristite u proizvodnji proizvoda?",
+      "answer": [
+        "Kada koristite složene sastojke, odnosno prerađene namirnice, u svom receptu, potrebno je dostaviti nutritivnu deklaraciju, spisak sastojaka i izjavu o alergenima za te sastojke. Ovo je važno kako bi se osigurala tačnost proračuna i kako bi konačne nutritivne informacije gotovog proizvoda odražavale stvarnu nutritivnu vrednost koju svaki od vaših specifičnih sastojaka doprinosi. Naš softver za nutritivna izračunavanja koristi specifične nutritivne informacije složenih sastojaka u vašem receptu. Osim toga, Pravilnik o deklarisanju, označavanju i reklamiranju hrane zahteva da se na deklaraciji navede spisak sastojaka složenog sastojka, pri čemu se sastojci navode opadajućim redosledom prema procentu težine. Dabi mogli da sačinimo tačan spisak sastojaka vašeg proizvoda, potrebno je da imamo pristup spisku sastojaka svakog pojedinačnog složenog sastojka u vašem receptu.",
+        "Važno je napomenuti da se složeni sastojak odnosi na gotovo svaki sastojak, osim sirovog voća i povrća, čistog mesa, vode ili naprimer sastojaka kao što su so i ulje. Kada dostavljate svoj recept, molimo vas da proverite deklaracije svakog sastojka koji koristite. Čak i neke namirnice koje se možda ne smatraju “prerađenim” mogu sadržati dodatne sastojke koji se moraju navesti na deklaraciji vašeg gotovog proizvoda. Na primer, iseckane jabuke mogu sadržati askorbinsku kiselinu"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}page-inner page-about{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    {% with h=home_content %}
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Osnivač</p>
+        <h1 class="section-title">{{ h.origin.title|default:"Kako je nastao Nutrikator?" }}</h1>
+      </div>
+    </section>
+    <section class="page-section page-section--muted">
+      <div class="container founder-wrap">
+        <figure class="photo-frame photo-frame--portrait">
+          <img src="{% static 'img/kristina.jpg' %}" alt="Kristina Lazarević, osnivač Nutrikatora">
+        </figure>
+        <div>
+          <div class="prose">
+            {% for p in h.origin.paragraphs %}
+              <p>{{ p }}</p>
+            {% endfor %}
+          </div>
+          {% if company %}
+            <p class="founder-meta">
+              <strong>{{ company.founder_name|default:"Dr Kristina Lazarević" }}</strong>
+              <span>{{ company.founder_title|default:"doktor hemijskih nauka / Osnivač Nutrikatora" }}</span>
+            </p>
+          {% else %}
+            <p class="founder-meta">
+              <strong>Dr Kristina Lazarević</strong>
+              <span>doktor hemijskih nauka / Osnivač Nutrikatora</span>
+            </p>
+          {% endif %}
+          {% if h.quote %}
+            <blockquote class="founder-quote">{{ h.quote }}</blockquote>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container about-with-stats">
+        <div class="about-copy">
+          <p class="section-kicker">{{ h.about.eyebrow|default:"Šta je Nutrikator" }}</p>
+          <h2 class="section-title section-title--wide">{{ h.about.title }}</h2>
+          <div class="prose page-prose">
+            {% for p in h.about.paragraphs %}
+              <p>{{ p }}</p>
+            {% endfor %}
+          </div>
+        </div>
+        {% if h.stats %}
+          <div class="stats-col">
+            {% for stat in h.stats %}
+              <div class="stat">
+                <strong>{{ stat.value }}</strong>
+                <span>{{ stat.label }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endwith %}
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

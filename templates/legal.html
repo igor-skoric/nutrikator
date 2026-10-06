@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body_class %}page-inner page-legal{% endblock %}
+
+{% block content %}
+  {% include "partials/site_header.html" %}
+  <main class="site-main" id="main">
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-kicker">Pravno</p>
+        <h1 class="section-title">{{ page.title }}</h1>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="legal-wrap">
+        <div class="body">{{ page.body_md }}</div>
+        <a class="back" href="/">← Početna</a>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block extra_js %}
+  {% include "partials/page_scripts.html" %}
+{% endblock %}

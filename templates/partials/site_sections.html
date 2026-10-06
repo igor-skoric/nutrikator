@@ -1,0 +1,286 @@
+{% load static %}
+{% if home_content %}
+<main class="site-main" id="main">
+  {% with h=home_content %}
+
+  <section class="page-section" id="o-nama">
+    <div class="container split">
+      <div>
+        {% if h.about.eyebrow %}<p class="section-kicker">{{ h.about.eyebrow }}</p>{% endif %}
+        <h2 class="section-title section-title--wide">{{ h.about.title }}</h2>
+        <div class="prose">
+          {% for p in h.about.paragraphs %}
+            <p>{{ p }}</p>
+          {% endfor %}
+        </div>
+        {% if h.stats %}
+          <div class="stats-row">
+            {% for stat in h.stats %}
+              <div class="stat">
+                <strong>{{ stat.value }}</strong>
+                <span>{{ stat.label }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <figure class="photo-frame">
+        <img src="{% static 'img/photos/salad-nutrition.jpg' %}" alt="Nutritivne informacije na sastojcima obroka">
+        <figcaption class="photo-caption">EuroFIR baza · metoda proračuna za deklarisanje</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="page-section page-section--paper" id="benefiti">
+    <div class="container">
+      <p class="section-kicker">Prednosti</p>
+      <h2 class="section-title section-title--wide">{{ h.benefitsTitle }}</h2>
+      <div class="benefits-grid">
+        {% for item in h.benefits %}
+          <article class="benefit-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--ink" id="poredjenje">
+    <div class="container">
+      <p class="section-kicker section-kicker--light">{{ h.compare.eyebrow|default:"Suština usluge" }}</p>
+      <h2 class="section-title section-title--light">{{ h.compare.title|default:"Laboratorija nije jedini put do deklaracije." }}</h2>
+      <p class="section-lead section-lead--light">
+        {{ h.compare.lead|default:"Pravilnik o deklarisanju hrane izričito dozvoljava proračun na osnovu poznatih prosečnih vrednosti sastojaka. Nutrikator je taj postupak pretvorio u uslugu: vaš recept ulazi, deklaracija izlazi." }}
+      </p>
+      <div class="compare">
+        <div class="compare-head">
+          <span></span>
+          <span>Laboratorija</span>
+          <span>Nutrikator</span>
+        </div>
+        <div class="compare-row">
+          <p>Uzorak</p>
+          <p>Fizički uzorak, transport, čekanje</p>
+          <p>Samo receptura i proces — online</p>
+        </div>
+        <div class="compare-row">
+          <p>Rok</p>
+          <p>Nedeljama</p>
+          <p>Obično 1 dan</p>
+        </div>
+        <div class="compare-row">
+          <p>Cena</p>
+          <p>Visoka, posebno za vitamine i minerale</p>
+          <p>3× povoljnije, fiksni paketi</p>
+        </div>
+        <div class="compare-row">
+          <p>Izmena recepture</p>
+          <p>Cela analiza ispočetka</p>
+          <p>Korekcija postojećeg proračuna</p>
+        </div>
+        <div class="compare-row">
+          <p>Osnov</p>
+          <p>Jedna laboratorijska serija</p>
+          <p>EuroFIR proseci + faktori procesa</p>
+        </div>
+        <div class="compare-row">
+          <p>Zakon</p>
+          <p>Član 33, tačka 1</p>
+          <p>Član 33, tačke 2 i 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted" id="kome">
+    <div class="container">
+      <p class="section-kicker">Publika</p>
+      <h2 class="section-title section-title--wide">{{ h.audiencesIntro.title }}</h2>
+      <p class="section-lead">{{ h.audiencesIntro.text }}</p>
+
+      {% if audiences %}
+        <div class="audience-tabs" role="tablist" aria-label="Kome je namenjen Nutrikator">
+          {% for aud in audiences %}
+            <button
+              class="audience-tab{% if forloop.first %} is-active{% endif %}"
+              type="button"
+              role="tab"
+              id="tab-{{ aud.slug }}"
+              data-audience-tab="{{ aud.slug }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="panel-{{ aud.slug }}"
+            >{{ aud.title }}</button>
+          {% endfor %}
+        </div>
+
+        <div class="audience-stage">
+          {% for aud in audiences %}
+            <article
+              class="audience-panel"
+              role="tabpanel"
+              id="panel-{{ aud.slug }}"
+              data-audience-panel="{{ aud.slug }}"
+              aria-labelledby="tab-{{ aud.slug }}"
+              {% if not forloop.first %}hidden{% endif %}
+            >
+              <div class="audience-photo">
+                {% if aud.image %}
+                  <img src="{% static aud.image %}" alt="{{ aud.title }}">
+                {% else %}
+                  <img src="{% static 'img/photos/healthy-bowl.jpg' %}" alt="{{ aud.title }}">
+                {% endif %}
+              </div>
+              <div class="audience-copy">
+                <h3>{{ aud.title }}</h3>
+                {% if aud.intro %}<p>{{ aud.intro }}</p>{% endif %}
+                {% if aud.lead %}<p><strong>{{ aud.lead }}</strong></p>{% endif %}
+                {% if aud.paragraphs %}
+                  {% for p in aud.paragraphs %}
+                    <p>{{ p }}</p>
+                  {% endfor %}
+                {% endif %}
+                {% if aud.services %}
+                  <ul>
+                    {% for s in aud.services %}
+                      <li>
+                        <strong>{{ s.title }}</strong>
+                        {% if s.text %}<span>{{ s.text }}</span>{% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if aud.outro %}<p>{{ aud.outro }}</p>{% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="page-section" id="paketi">
+    <div class="container">
+      <p class="section-kicker">Cene</p>
+      <h2 class="section-title">{{ h.packagesSectionTitle }}</h2>
+      <p class="section-lead">{{ h.packagesLead }}</p>
+      <div class="packages-grid">
+        {% for pkg in packages %}
+          <article class="package-card{% if pkg.featured %} is-featured{% endif %}">
+            <div class="package-top">
+              <div>
+                <h3>{{ pkg.name }}</h3>
+                {% if pkg.subtitle %}<p class="package-sub">{{ pkg.subtitle }}</p>{% endif %}
+              </div>
+              <p class="package-price">
+                <strong>{{ pkg.price|floatformat:0 }}</strong>
+                <span>{{ pkg.currency }}</span>
+              </p>
+            </div>
+            <ul class="package-features">
+              {% for feature in pkg.features %}
+                <li>{{ feature }}</li>
+              {% endfor %}
+            </ul>
+            {% if pkg.cta %}
+              <a class="btn btn-primary package-cta" href="#kontakt">{{ pkg.cta }}</a>
+            {% endif %}
+            {% if pkg.sample_report %}
+              <a class="package-sample" href="{{ pkg.sample_report }}" target="_blank" rel="noopener">Pogledajte primer izveštaja</a>
+            {% endif %}
+          </article>
+        {% empty %}
+          <p>Paketi još nisu učitani. Pokrenite <code>python manage.py load_content</code>.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--paper" id="proces">
+    <div class="container split split--reverse split--top">
+      <figure class="photo-frame">
+        <img src="{% static 'img/photos/clipboard.jpg' %}" alt="Priprema nutritivnih podataka za proizvod">
+      </figure>
+      <div>
+        <p class="section-kicker">Kako naručiti</p>
+        <h2 class="section-title section-title--wide">{{ h.process.title }}</h2>
+        <ol class="process-steps">
+          {% for step in h.process.steps %}
+            <li>
+              <span class="process-num">{{ forloop.counter }}</span>
+              <p>{% if step.text %}{{ step.text }}{% else %}{{ step }}{% endif %}</p>
+            </li>
+          {% endfor %}
+        </ol>
+        {% if h.process.contactHint %}
+          <p class="process-hint">{{ h.process.contactHint }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted" id="osnivac">
+    <div class="container founder-wrap">
+      <figure class="photo-frame photo-frame--portrait">
+        <img src="{% static 'img/kristina.jpg' %}" alt="Kristina Lazarević, osnivač Nutrikatora">
+      </figure>
+      <div>
+        <p class="section-kicker">Osnivač</p>
+        <h2 class="section-title section-title--wide">{{ h.origin.title }}</h2>
+        <div class="prose">
+          {% for p in h.origin.paragraphs %}
+            <p>{{ p }}</p>
+          {% endfor %}
+        </div>
+        {% if company %}
+          <p class="founder-meta">
+            <strong>{{ company.founder_name }}</strong>
+            {% if company.founder_title %}<span>{{ company.founder_title }}</span>{% endif %}
+          </p>
+        {% endif %}
+        {% if h.quote %}
+          <blockquote class="founder-quote">{{ h.quote }}</blockquote>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="faq">
+    <div class="container">
+      <p class="section-kicker">Pitanja</p>
+      <h2 class="section-title section-title--wide">{{ h.faqTitle }}</h2>
+      <div class="faq-list">
+        {% for item in faqs %}
+          <details class="faq-item"{% if forloop.first %} open{% endif %}>
+            <summary>{{ item.question }}</summary>
+            <div class="faq-answer">
+              {% for p in item.answer %}
+                <p>{{ p }}</p>
+              {% endfor %}
+            </div>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--cta" id="kontakt">
+    <div class="container cta-band">
+      <h2 class="section-title section-title--light">{{ h.cta.title|default:"Spremni za deklaraciju?" }}</h2>
+      <p class="section-lead section-lead--light">
+        {% if company and company.email_info %}
+          Pišite na <a href="mailto:{{ company.email_info }}">{{ company.email_info }}</a>
+        {% endif %}
+        {% if company and company.phone_sales %}
+          ili pozovite {{ company.phone_sales }}.
+        {% endif %}
+      </p>
+      <a class="btn btn-primary" href="mailto:{{ company.email_info|default:'info@nutrikator.com' }}">
+        Pošaljite upit
+      </a>
+    </div>
+  </section>
+
+  {% endwith %}
+</main>
+{% endif %}

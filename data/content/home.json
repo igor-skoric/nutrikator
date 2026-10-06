@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "kicker": "Nutritivne informacije",
+    "headline": "NA KLIK OD VAS",
+    "lead": "NUTRIKATOR je prvi softver u Srbiji i regionu za izračunavanje nutritivnih vrednosti hrane. Oslonite se na spoj digitalne tehnologije i iskustva naših eksperata!",
+    "body": "Usluga softverskog izračunavanja nutritivne vrednosti hrane – pouzdano, efikasno i zakonski dozvoljeno rešenje koje omogućava da na jednostavan način, sa manje troškova dobijete nutritivne tabele i deklaracije za svoje proizvode.",
+    "ctaPrimary": "Klikom do usluge",
+    "ctaSecondary": "Više informacija"
+  },
+  "about": {
+    "eyebrow": "Šta je Nutrikator",
+    "title": "Softversko rešenje za nutritivne tabele i deklaracije",
+    "paragraphs": [
+      "Nutrikator je inovativno, efikasno i pouzdano softversko rešenje koje omogućava proračun nutritivne vrednosti i nutritivnog sastava hrane. Naš napredni softverski alat kombinuje savremene digitalne tehnologije sa višedecenijskim iskustvom našeg tima, kako bi brzo i precizno kreirao nutritivne tabele i deklaracije vaših proizvoda.",
+      "Proračun nutritivnih sastojaka je zakonski dozvoljeni postupak za dobijanje nutritivnih informacija i energetske vrednosti hrane u svrhu deklarisanja, i zakonski dozvoljena alternativa laboratorijskoj analizi hrane. Softver koji je kreirao naš tim koristi zvanično priznatu bazu podataka sa 12000 sastojaka Evropske agencije za informacije o hrani EuroFIR kao i metodu proračuna preporučenu od strane EuroFIR.",
+      "Nutrikator je brži, efikasniji, fleksibilniji i ekonomičniji u poređenju sa laboratorijama za analizu hrane. Pružamo sveobuhvatnu uslugu koja vam omogućava da ispunete regulatornu obavezu za pravilno deklarisanje i pružanje relevantnih nutritivnih informacija potrošačima, uz istovremenu uštedu vremena i resursa."
+    ]
+  },
+  "stats": [
+    { "value": "12.000", "label": "sastojaka u EuroFIR bazi" },
+    { "value": "1 dan", "label": "uobičajen rok izrade" },
+    { "value": "3×", "label": "povoljnije od laboratorije" }
+  ],
+  "benefitsTitle": "Zašto Nutrikator, a ne laboratorija",
+  "benefits": [
+    {
+      "title": "100% profesionalno",
+      "text": "Nutrikator softver za proračun koristi baze podataka i metodu proračuna Evropske agencije za hranu (EuroFIR) i primenjuje važeću regulativu Republike Srbije. Mi smo tim iskusnih eksperata, koji ima dugogodišnje iskustvo u kreiranju nutritivnih tabela i primeni regulative u oblasti nutritivnih analiza i deklarisanja hrane."
+    },
+    {
+      "title": "5× brže",
+      "text": "Zaboravite na čekanje rezultata nedeljama, nama je potreban 1 dan. Ako ste u velikoj žurbi, možemo biti i brži!"
+    },
+    {
+      "title": "3× povoljnije",
+      "text": "Usluga Nutrikatora je daleko povoljnija od laboratorijske analize."
+    },
+    {
+      "title": "Dugoročno preciznije",
+      "text": "Laboratorijska analiza nutritivnog sastava se obično uradi samo jednom, a poznato je da nutritivni sadržaj sastojaka može varirati u zavisnosti od mnogih faktora. Mi koristimo prosečne vrednosti za proračun, što dugoročno gledano daje preciznije rezultate."
+    },
+    {
+      "title": "Fleksibilno",
+      "text": "Nutrikator veoma brzo i lako može izvršiti promenu sastojaka ili procesa za već izvršene proračune, dok laboratorijska analiza mora da se ponovi u celosti."
+    },
+    {
+      "title": "Online usluga",
+      "text": "Naša usluga je potpuno online. Nutrikatoru nije potreban uzorak proizvoda — samo informacije o sastavu i procesu, koje nam dostavljate popunjavanjem formulara na sajtu ili e-mailom."
+    }
+  ],
+  "compare": {
+    "eyebrow": "Suština usluge",
+    "title": "Laboratorija nije jedini put do deklaracije.",
+    "lead": "Pravilnik o deklarisanju hrane izričito dozvoljava proračun na osnovu poznatih prosečnih vrednosti sastojaka. Nutrikator je taj postupak pretvorio u uslugu: vaš recept ulazi, deklaracija izlazi."
+  },
+  "process": {
+    "title": "Naručite brzo i jednostavno deklaraciju za svoje proizvode",
+    "lead": "Pet koraka, od izbora paketa do deklaracije u sandučetu. Sve ide online, bez slanja fizičkog uzorka.",
+    "steps": [
+      {
+        "title": "Odaberite paket",
+        "text": "Odaberite željeni paket usluga koji najbolje odgovara vašim potrebama."
+      },
+      {
+        "title": "Pošaljite podatke o proizvodu",
+        "text": "Ispunite online formular sa detaljima o proizvodu, ili iste podatke pošaljite e-poštom.",
+        "points": [
+          "Spisak sastojaka i tačna masa svakog sastojka.",
+          "Za složene sastojke: spisak sastojaka i nutritivna vrednost sa deklaracije, ili fotografija te deklaracije.",
+          "Opis postupka pripreme proizvoda.",
+          "Ukupna masa sastojaka pre pripreme, za jednu seriju.",
+          "Masa nakon pripreme jedne serije, ako je poznata.",
+          "Masa jedne porcije.",
+          "Neto težina pakovanja."
+        ]
+      },
+      {
+        "title": "Mi radimo proračun",
+        "text": "Tim obrađuje podatke i izrađuje deklaraciju. Proračun ide iz nutritivnog sastava sastojaka, po metodi EuroFIR-a, uz faktore za tehnološki proces pripreme."
+      },
+      {
+        "title": "Šaljemo račun",
+        "text": "Račun za uslugu stiže e-poštom, sa naznačenim detaljima i načinom plaćanja."
+      },
+      {
+        "title": "Dobijate deklaraciju",
+        "text": "Deklaracija proizvoda stiže putem e-pošte."
+      }
+    ],
+    "contactHint": "Možete nas kontaktirati putem e-maila na info@nutrikator.com ili pozivom na +381 60 130 82 30."
+  },
+  "packagesSectionTitle": "Paketi usluga",
+  "packagesLead": "Izaberite obim deklaracije. Standard je onaj koji većini proizvođača treba za prodaju — nutritivna tabela po porciji i referentni unos.",
+  "audiencesIntro": {
+    "title": "Kome je namenjen Nutrikator?",
+    "text": "Prvi smo servis u Srbiji koji primenjuje softversko rešenje za nutritivna izračunavanja u svrhu deklarisanja prehrambenih proizvoda. Usluga je namenjena svima kojima su pouzdane nutritivne informacije potrebne — od proizvođača do restauratora."
+  },
+  "origin": {
+    "title": "Kako je nastao Nutrikator?",
+    "paragraphs": [
+      "Kroz 25 godina istraživanja i rada u laboratoriji za ispitivanje hrane, shvatila sam da postoji velika potreba za efikasnim i pouzdanim načinom proračuna nutritivne vrednosti hrane. To me je inspirisalo da razvijem Nutrikator, koji je spoj mog iskustva i želje da stvorim alat koji će doneti inovativno rešenje svim subjektima u poslovanju hranom, i svima drugima kojima su nutritivne informacije potrebne.",
+      "Nutrikator softver nije samo proizvod tehničkog razvoja, već je rezultat moje posvećenosti, od koncepta do implementacije. Ponosim se time što sam kroz dugotrajno istraživanje, razvoj i testiranje lično doprinela svakom detalju, kako bih osigurala da pruža vrhunsku funkcionalnost i pouzdanost. Kao deo Nutrikator tima, uverena sam da će usluge Nutrikatora biti izuzetno korisne za proizvođače hrane i sve druge koji imaju potrebu za pouzdanim nutritivnim informacijama."
+    ]
+  },
+  "quote": "Verujem da naša usluga može biti ključni faktor u unapređenju vašeg poslovanja!",
+  "faqTitle": "Često postavljena pitanja",
+  "cta": {
+    "title": "Spremni za deklaraciju?",
+    "text": "Pišite nam ili pozovite — odgovaramo brzo i kažemo koji paket vam treba."
+  },
+  "nav": [
+    { "label": "O nama", "href": "/o-nama" },
+    { "label": "Benefiti", "href": "/benefiti" },
+    { "label": "Vs laboratorija", "href": "/vs-laboratorija" },
+    { "label": "Usluge", "href": "/usluge" },
+    { "label": "Paketi", "href": "/paketi" },
+    { "label": "Kako naručiti", "href": "/kako-naruciti" },
+    { "label": "FAQ", "href": "/faq" }
+  ],
+  "footerLinks": [
+    { "label": "Uslovi poslovanja", "href": "/uslovi-poslovanja" },
+    { "label": "Politika privatnosti", "href": "/politika-privatnosti" },
+    { "label": "Politika kolačića", "href": "/politika-upotrebe-kolacica" }
+  ]
+}

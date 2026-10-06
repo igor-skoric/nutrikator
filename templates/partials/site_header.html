@@ -1,0 +1,40 @@
+{% load static %}
+<header class="header site-header" data-site-header>
+  <div class="site-header-shell">
+    <div class="container">
+      <nav class="nav" data-nav>
+        <a href="/" class="brand">
+          <img src="{% static 'img/logo-light.png' %}" alt="Nutrikator">
+        </a>
+        <div class="nav-panel" id="navPanel">
+          <div class="nav-links">
+            {% if home_content.nav %}
+              {% for link in home_content.nav %}
+                <a href="{{ link.href }}">{{ link.label }}</a>
+              {% endfor %}
+            {% else %}
+              <a href="/o-nama">O nama</a>
+              <a href="/benefiti">Benefiti</a>
+              <a href="/usluge">Usluge</a>
+              <a href="/paketi">Paketi</a>
+              <a href="/faq">FAQ</a>
+            {% endif %}
+          </div>
+        </div>
+        <a href="/paketi" class="nav-cta">
+          Izradi deklaraciju
+          <svg viewBox="0 0 24 24" fill="none" width="14" aria-hidden="true">
+            <path d="M8 12h8M13 9l3 3-3 3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="navPanel">
+          <span class="nav-toggle-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>

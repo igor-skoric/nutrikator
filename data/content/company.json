@@ -1,0 +1,45 @@
+{
+  "name": "Nutrikator",
+  "legalName": "Nutrikator d.o.o.",
+  "tagline": "Nutritivne informacije NA KLIK OD VAS",
+  "pib": "113103496",
+  "maticniBroj": "21802379",
+  "emails": {
+    "info": "info@nutrikator.com",
+    "privacy": "kristina@nutrikator.com"
+  },
+  "phones": {
+    "sales": "+381 60 130 82 30",
+    "office": "+381 60 398 30 11"
+  },
+  "founder": {
+    "name": "Kristina Lazarević",
+    "title": "Doktor hemijskih nauka / osnivač Nutrikatora"
+  },
+  "addresses": {
+    "currentFooter": {
+      "note": "Prikazana na footer-u live sajta (2026 scrape)",
+      "value": "Regus – TheOne, Omladinskih brigada 98, 1. sprat, 11000 Beograd"
+    },
+    "privacyPolicy": {
+      "note": "Politika privatnosti",
+      "value": "Petra Martinovića 25, 11000 Beograd"
+    },
+    "termsRegistered": {
+      "note": "Uslovi poslovanja 1.1",
+      "value": "Petra Martinovića 2, 11000 Beograd"
+    },
+    "termsOfficeOld": {
+      "note": "Uslovi poslovanja 1.1 — adresa kancelarije",
+      "value": "Green Heart Complex, Bulevar Milutina Milankovića 11g, 11000 Beograd"
+    }
+  },
+  "method": {
+    "database": "EuroFIR",
+    "ingredientsCount": 24000,
+    "guideline": "Guideline for calculating nutrient content for nutrition declaration, EuroFIR AISBL (2018)",
+    "databaseYear": "EuroFIR 2022",
+    "regulation": "Pravilnik o deklarisanju, označavanju i reklamiranju hrane (“Sl. glasnik RS”, br. 19/2017, 16/2018, 17/2020, 118/2020, 17/2022, 23/2022, 30/2022.)"
+  },
+  "funding": "Projekat finansira Fond za inovacionu delatnost iz Pretpristupnih fondova Evropske unije i budžeta Republike Srbije sa razdela Ministarstva nauke, tehnološkog razvoja i inovacija."
+}

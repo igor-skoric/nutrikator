@@ -1,0 +1,153 @@
+{
+  "items": [
+    {
+      "id": "proizvodjaci",
+      "title": "Proizvođači hrane",
+      "image": "img/audience-proizvodjaci.jpg",
+      "intro": "Nutrikator je prvi servis u Srbiji koji primenjuje softversko rešenje za nutritivna izračunavanja u svrhu deklarisanja prehrambenih proizvoda. Naša stručna podrška proizvođačima hrane uključuje sledeće usluge:",
+      "services": [
+        {
+          "title": "Izračunavanje energetske i nutritivne vrednosti",
+          "text": "Nudimo vam efikasno i pouzdano rešenje za izračunavanje energetske i nutritivne vrednosti hrane, bez analize proizvoda u laboratoriji. Naši stručnjaci koriste specijalizovani softver i pouzdane baze podataka sa 12 000 sastojaka kako bi izračunali preciznu energetsku i nutritivnu vrednost vašeg proizvoda."
+        },
+        {
+          "title": "Deklarisanje hrane",
+          "text": "Naš tim će pravilno navesti sve obavezne informacije na deklaraciji vašeg proizvoda. Bilo da je reč o nazivu proizvoda, sastojcima, alergenima ili uputstvima za upotrebu, možete računati da će vaša deklaracija biti tačna i usaglašena sa zahtevima zakonske regulative."
+        },
+        {
+          "title": "Savetovanje i podrška",
+          "text": "Pružamo stručno savetovanje i podršku tokom celog procesa. Odgovorićemo na sva vaša pitanja i pružiti vam neophodne smernice kako biste bili sigurni da ispunjavate sve zakonske zahteve u vezi sa deklarisanjem hrane."
+        }
+      ]
+    },
+    {
+      "id": "e-trgovine",
+      "title": "E-trgovine hranom",
+      "image": "img/audience-etrgovine.jpg",
+      "intro": "Svaki promet hrane, nezavisno od toga da li se odvija kroz fizički kontakt ili preko elektronskih sredstava komunikacije, podleže zahtevima za bezbednost hrane. Deklaracija je ključni element za informacije o sastavu, alergenima i hranljivim vrednostima — i te informacije moraju biti dostupne i na vašem sajtu.",
+      "lead": "Naša usluga obuhvata sledeće:",
+      "services": [
+        {
+          "title": "Izračunavanje energetske i nutritivne vrednosti",
+          "text": "Nudimo vam efikasno i pouzdano rešenje za izračunavanje energetske i nutritivne vrednosti hrane, bez analize proizvoda u laboratoriji. To potrošačima omogućava da donesu informisane odluke pri kupovini."
+        },
+        {
+          "title": "Izrada deklaracija",
+          "text": "Pomoći ćemo vam u izradi tačnih i potpunih deklaracija. Obezbeđujemo da deklaracija sadrži sve obavezne informacije, kao što su sastojci, alergeni i nutritivne vrednosti hrane."
+        },
+        {
+          "title": "Prilagođavanje deklaracija za veb-sajt",
+          "text": "Pomoći ćemo vam da deklaracije vaših proizvoda budu jasno prikazane i lako dostupne na sajtu za prodaju hrane — pre nego što kupac završi kupovinu."
+        },
+        {
+          "title": "Stručni saveti i podrška",
+          "text": "Odgovorićemo na sva vaša pitanja i pružiti vam smernice kako biste ispunjavali zahteve u vezi sa deklarisanjem hrane u e-trgovini."
+        }
+      ]
+    },
+    {
+      "id": "uvoznici",
+      "title": "Uvoznici i distributeri",
+      "image": "img/audience-distributeri.jpg",
+      "intro": "Usluga je prilagođena uvoznicima i distributerima koji žele da osiguraju usklađenost proizvoda s domaćom regulativom. Ako već raspolažete tehničkom dokumentacijom i proizvođačkim specifikacijama, možemo izraditi deklaraciju za proizvod koji uvozite ili distribuirate.",
+      "lead": "Naša usluga uključuje:",
+      "services": [
+        {
+          "title": "Analiza dokumentacije",
+          "text": "Pažljivo pregledamo tehničku dokumentaciju, proizvođačke specifikacije i druge relevantne informacije o proizvodu, kako bismo osigurali da deklaracija bude u skladu sa propisima."
+        },
+        {
+          "title": "Izrada deklaracije",
+          "text": "Na osnovu dostavljenih informacija izrađujemo deklaraciju koja zadovoljava zahteve domaće regulative: naziv, sastojci, alergeni, nutritivne vrednosti i ostali obavezni podaci."
+        },
+        {
+          "title": "Usklađenost sa zahtevima",
+          "text": "Proveravamo da deklaracija sadrži sve potrebne informacije i da se proizvod pravilno prezentuje na tržištu."
+        },
+        {
+          "title": "Savetovanje i podrška",
+          "text": "Odgovaramo na pitanja i dajemo smernice kako biste pravilno deklarisali proizvode koje uvozite ili distribuirate."
+        }
+      ]
+    },
+    {
+      "id": "recepti",
+      "title": "Autori recepata",
+      "image": "img/audience-recepti.jpg",
+      "paragraphs": [
+        "Današnji kulinarski priručnici često uključuju i nutritivni aspekt uz svaki recept. Čitaoci ne žele samo da znaju kako da pripreme jelo, već i kako će ono uticati na njihovo telo. Dodavanje informacija o nutritivnom sastavu unapređuje sadržaj i daje dodatnu vrednost čitaocima.",
+        "Naš napredni softverski alat kombinuje savremene tehnologije sa stručnim znanjem tima i precizno izračunava nutritivne sastojke i nutritivnu vrednost jela. Tu smo da odgovorimo na pitanja i pomognemo da se istaknete u kulinarskom svetu."
+      ]
+    },
+    {
+      "id": "ketering",
+      "title": "Ketering kompanije",
+      "image": "img/audience-ketering.jpg",
+      "intro": "Klijenti žele da znaju šta jedu. Informacija o sastavu hrane nije samo zakonska obaveza — često je i opredeljujući faktor pri izboru. Ne morate se gubiti u šumi propisa: naš tim pomaže u razumevanju i primeni.",
+      "lead": "Naša usluga uključuje:",
+      "services": [
+        {
+          "title": "Analiza menija",
+          "text": "Izračunavamo nutritivne informacije za svaki obrok — bankete, koktele ili individualne porcije — sa detaljima o energetskoj vrednosti i nutritivnim sastojcima."
+        },
+        {
+          "title": "Prilagođavanje ponude",
+          "text": "Pomažemo vam da ponudu uskladite sa alergenima, ograničenjima u ishrani, vegetarijanskim ili veganskim zahtevima klijenata."
+        },
+        {
+          "title": "Deklarisanje hrane",
+          "text": "Ako je deo ponude upakovana hrana ili gotovi obroci, pomažemo da proizvodi budu pravilno obeleženi i da deklaracije budu transparentne."
+        },
+        {
+          "title": "Inovacija i savetovanje",
+          "text": "Pratimo trendove u ishrani i pomažemo u razvoju menija koji odgovaraju zahtevima tržišta."
+        }
+      ]
+    },
+    {
+      "id": "nutricionisti",
+      "title": "Nutricionisti",
+      "image": "img/audience-nutricionisti.jpg",
+      "paragraphs": [
+        "Kao nutricionista razumete važnost pravilne ishrane. Izračunavanje nutritivnih informacija može biti vremenski zahtevan proces — Nutrikator je tu da vam taj deo posla preuzme, kako biste se usredsredili na klijente."
+      ],
+      "lead": "Usluge koje pružamo nutricionistima:",
+      "services": [
+        {
+          "title": "Nutritivna izračunavanja",
+          "text": "Bilo da se radi o gotovim obrocima, receptima ili individualnim namirnicama, dajemo detaljne informacije o nutritivnoj vrednosti, makro i mikroelementima."
+        },
+        {
+          "title": "Deklarisanje hrane",
+          "text": "Ako imate proizvode namenjene prodaji, pomažemo da budu pravilno deklarisani, u skladu sa propisima."
+        }
+      ],
+      "outro": "Cilj nam je da vam olakšamo proračun, kako biste se fokusirali na nutricionističku podršku svojim klijentima."
+    },
+    {
+      "id": "restorani",
+      "title": "Restorani i hoteli",
+      "image": "img/audience-restorani.jpg",
+      "intro": "Gosti sve češće traže tačne informacije o hrani: alergije, dijetalni režimi, posebne potrebe. Nutrikator pomaže hotelima i restoranima da te informacije budu jasne, pouzdane i usklađene sa propisima.",
+      "services": [
+        {
+          "title": "Analiza jelovnika",
+          "text": "Izračunavamo nutritivne informacije za stavke na jelovniku — predjelo, glavno jelo, prilog ili desert — uključujući kalorijsku vrednost i makro i mikroelemente."
+        },
+        {
+          "title": "Prilagođavanje jelovnika",
+          "text": "Pomažemo da jelovnik odgovori vegetarijanskim, veganskim, bezglutenskim i drugim zahtevima gostiju."
+        },
+        {
+          "title": "Deklarisanje hrane",
+          "text": "Ako pakujete hranu za prodaju, pomažemo da upakovani proizvodi budu pravilno obeleženi i usklađeni sa zakonodavstvom."
+        },
+        {
+          "title": "Obuka osoblja",
+          "text": "Osoblje koje zna alergene, dijetalna ograničenja i nutritivnu vrednost jela pruža sigurniju i bolju uslugu gostima."
+        }
+      ],
+      "outro": "Sa našom podrškom možete se fokusirati na pripremu obroka, a gosti dobijaju pouzdane podatke o hrani koju servirate."
+    }
+  ]
+}
