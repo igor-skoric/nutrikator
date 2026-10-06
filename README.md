@@ -40,11 +40,14 @@ Dozvoljeni hostovi: `nutrikator.rs`, `www.nutrikator.rs`, `nutrikator.rs.itbranc
 Na serveru kopiraj `.env.example` u `.env`, postavi `DJANGO_SECRET_KEY` i `DJANGO_DEBUG=false`, pa:
 
 ```bash
+cd /home/labvit/nutrikator.rs.itbranch.rs
+source /home/labvit/virtualenv/nutrikator.rs.itbranch.rs/3.11/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py load_content
 python manage.py collectstatic --noinput
-gunicorn config.wsgi:application --bind 0.0.0.0:8000
 ```
+
+`db.sqlite3` nije u repozitorijumu. Bez `migrate` i `load_content` početna stranica vraća 500. Posle toga restartuj aplikaciju. Sajt otvaraj preko `https://` kad sertifikat bude aktivan.
 
 Proxy treba da prosleđuje `X-Forwarded-Proto: https`. `DJANGO_SECURE_SSL_REDIRECT=true` uključi tek kada je to provereno, da ne nastane petlja preusmeravanja.

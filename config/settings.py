@@ -178,6 +178,10 @@ WHITENOISE_USE_FINDERS = DEBUG
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 USE_X_FORWARDED_HOST = True
+# Browsers discard this header on plain HTTP and print a console error.
+SECURE_CROSS_ORIGIN_OPENER_POLICY = (
+    "same-origin" if _env_bool("DJANGO_SECURE_SSL_REDIRECT", False) else None
+)
 
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
